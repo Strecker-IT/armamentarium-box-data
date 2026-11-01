@@ -255,7 +255,7 @@ public sealed class Runner(
     private async Task RepairNamesAsync(HashSet<string> open, string text, string sha, CancellationToken cancellationToken)
     {
         var table = Table.Read(text);
-        var repairs = NameRepair.Apply(table, _hosts);
+        var repairs = NameRepair.Apply(table, _hosts, catalogues);
         if (repairs.Renamed.Count + repairs.Removed.Count + repairs.BoxesRemoved.Count == 0)
         {
             return;
@@ -271,6 +271,8 @@ public sealed class Runner(
             .AppendLine("From the scraper service (ADR 0004 Addendum ARMAM-598): names read before the reader's fixes. A clause read")
             .AppendLine("into a name is cut; a name that is no model leaves its box; a box left without entries goes whole and comes")
             .AppendLine("back with the next run; an upgrade set (ADR 0003 Addendum ARMAM-610) goes whole and does not come back.")
+            .AppendLine("A gap whose name now names the entry another line of its reading carries with the same count leaves")
+            .AppendLine("(ADR 0004 Addendum ARMAM-707).")
             .AppendLine("Never merged by the service, also with `--auto-merge`: the merge is the hand check.")
             .AppendLine()
             .AppendLine("| Box | Reading | Entry | Becomes |")
