@@ -32916,6 +32916,31 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Age of Sigmar Slaves to Darkness Chaos Lord on Karkadrak",
+      "productCodes": [
+        "99120201124"
+      ],
+      "sources": [
+        "https://www.retrofixgames.com/products/warhammer-age-of-sigmar-slaves-to-darkness-chaos-lord-on-karkadrak",
+        "https://shop.afk.games/products/slaves-to-darkness-chaos-lord-on-karkadrak",
+        "https://www.goblingaming.co.uk/products/chaos-lord-on-karkadrak"
+      ],
+      "readings": [
+        {
+          "reading": "aos",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "sph-catalogue::slaves-to-darkness",
+              "entryId": "sph::bloodwind-legion::01-chaos-lord",
+              "name": "Chaos Lord",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
