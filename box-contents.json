@@ -32858,6 +32858,31 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Space Marines: Primaris Chaplain on Bike",
+      "productCodes": [
+        "99120101273"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/space-marines-primaris-chaplain-on-bike",
+        "https://www.retrofixgames.com/products/warhammer-40k-space-marines-primaris-chaplain-on-bike",
+        "https://shop.afk.games/products/space-marines-primaris-chaplain-on-bike",
+        "https://obsidiangames.ca/products/space-marines-chaplain-on-bike",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/blood-angels/space-marines-primaris-chaplain-on-bike"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "name": "Primaris Chaplain",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
