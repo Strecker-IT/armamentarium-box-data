@@ -32996,6 +32996,34 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Soulblight Gravelords: Vampire Lord on Nightmare Steed",
+      "productCodes": [
+        "99120207181"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/soulblight-gravelords-vampire-lord-on-nightmare-steed",
+        "https://www.retrofixgames.com/products/age-of-sigmar-soulblight-gravelords-vampire-lord-on-nightmare-steed",
+        "https://shop.afk.games/products/vampire-lord-on-nightmare-steed",
+        "https://obsidiangames.ca/products/vampire-lord-on-nightmare-steed",
+        "https://www.goblingaming.co.uk/products/soulblight-gravelords-vampire-lord-on-nightmare-steed",
+        "https://elementgames.co.uk/new-warhammer-age-of-sigmar/soulblight-gravelords-vampire-lord-on-nightmare-steed"
+      ],
+      "readings": [
+        {
+          "reading": "aos",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "405e-c5f4-8579-b05c",
+              "entryId": "9043-94cc-3918-acd9",
+              "name": "Vampire Lord on Nightmare Steed",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
