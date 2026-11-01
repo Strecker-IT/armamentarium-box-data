@@ -32883,6 +32883,39 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Astra Militarum: Krieg Heavy Weapons Squad",
+      "productCodes": [
+        "99120105130"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/astra-militarum-krieg-heavy-weapons-squad",
+        "https://shop.afk.games/products/astra-militarum-krieg-heavy-weapons-squad",
+        "https://obsidiangames.ca/products/krieg-heavy-weapons-squad",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/imperial-guard/astra-militarum-krieg-heavy-weapons-squad"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "b0ae-12a5-c84-ea45",
+              "entryId": "1669-d311-eff9-243b",
+              "name": "Heavy Weapons Gunners",
+              "count": 3
+            },
+            {
+              "role": "team",
+              "catalogueId": "b0ae-12a5-c84-ea45",
+              "entryId": "1669-d311-eff9-243b",
+              "name": "Fire Coordinator",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
