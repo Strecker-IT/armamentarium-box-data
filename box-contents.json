@@ -32941,6 +32941,34 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Slaves to Darkness: Darkoath Chieftain on Warsteed",
+      "productCodes": [
+        "99120201181"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/slaves-to-darkness-darkoath-chieftain-on-warsteed",
+        "https://abyssgamestore.ca/products/slaves-to-darkness-darkoath-chieftain-on-warsteed-83-53",
+        "https://www.retrofixgames.com/products/warhammer-age-of-sigmar-slaves-to-darkness-darkoath-chieftain-on-warsteed",
+        "https://shop.afk.games/products/std-darkoath-chieftain-on-warsteed",
+        "https://obsidiangames.ca/products/slaves-to-darkness-darkoath-chieftain-on-warsteed",
+        "https://www.goblingaming.co.uk/products/age-of-sigmar-slaves-to-darkness-darkoath-chieftain-on-warsteed"
+      ],
+      "readings": [
+        {
+          "reading": "aos",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "2c23-a678-196b-ad69",
+              "entryId": "6bde-370e-478d-cf24",
+              "name": "Darkoath Chieftain on Warsteed",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
