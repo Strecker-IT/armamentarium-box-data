@@ -35,6 +35,9 @@ counts a member's pair as valid. A name starting with "Primaris" also hits by th
 **Changed by Addendum ARMAM-707:** Addendum ARMAM-598 "Gaps get ids": a gap whose hit its reading already lists stays a
 gap there; it leaves its box in `scraper/fix-names` when the line of that entry states the same count.
 
+**Changed by Addendum ARMAM-708:** §3 `tow` comes from `BSData/warhammer-the-old-world`, latest release, not from
+`vflam/Warhammer-The-Old-World`.
+
 ## Context
 
 The service runs on the server since 2026-10-17 (ARMAM-593). Its drafts wait for the maintainer to add catalogue ids,
@@ -264,3 +267,21 @@ stopped by the timeout would lose it).
 - **No widening of the named exception:** the repair sets no id and runs only in the draft the maintainer merges.
 - Decisions of the maintainer. Rejected: removing the gap in `scraper/backfill-ids` (merged without the hand check); the
   line with ids always winning, whatever the count.
+
+## Addendum ARMAM-708 — The Old World from BSData (2026-11-01)
+
+- **Measured** on 2026-11-01: `vflam/Warhammer-The-Old-World` answers 404 on GitHub. Since then every run left `tow`
+  unread (`unchecked: tow`): no name of the reading hit, so no build by article counted (ADR 0003 Addendum ARMAM-599),
+  and "General of the Empire on Imperial Griffon" (99122702001), removed for the reader of ARMAM-688, waited with "no
+  source states a model count", although its shops write "builds a General of the Empire on Imperial Griffon".
+- **The source moved:** the same author publishes the catalogues as `BSData/warhammer-the-old-world` (created
+  2026-10-23, BattleScribe JSON, release `1.4.3` of 2026-10-30), with the same game system id and the same catalogue and
+  entry ids. The app switched in Armamentarium ARMAM-624; §3 follows it ("a change there is a change here").
+- **No rule changes:** in that catalogue the mount is a shared entry, an option of "General of the Empire", not a root
+  entry. The longer name hits nothing and the name before "on" stays (Addendum ARMAM-688), so the box reads as "General of
+  the Empire" × 1, the pair it carried before. A single kit without a hit still states no count.
+- **What the next runs do:** the id check holds the `tow` pairs again, hand boxes' as well as service boxes' (Addendum
+  ARMAM-597); an orphaned pair goes into the never-merged draft `scraper/stale-ids`. Gaps of service boxes in `tow` get
+  their ids in `scraper/backfill-ids` (Addendum ARMAM-598).
+- Decisions of the maintainer. Rejected: a rule that a single kit counts one without a hit (prose would count as models);
+  a line of its own for the mount (the catalogue builds it as an option).
