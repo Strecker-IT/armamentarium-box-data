@@ -179,6 +179,37 @@ public sealed class CatalogueIndexTests
         Assert.IsNull(index.Find("40k", "Line"));
     }
 
+    private const string Chaplains = """
+        <?xml version="1.0" encoding="utf-8"?>
+        <catalogue id="cat-iron" name="Iron Brothers" library="false" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+          <selectionEntries>
+            <selectionEntry type="model" id="se-chap" name="Chaplain"/>
+            <selectionEntry type="model" id="se-chapbike" name="Chaplain on Bike"/>
+            <selectionEntry type="model" id="se-psyker" name="Primaris Psyker"/>
+            <selectionEntry type="unit" id="se-intercessors" name="Intercessor Squad"/>
+          </selectionEntries>
+        </catalogue>
+        """;
+
+    [TestMethod]
+    public void NameWithPrimaris_FindsTheEntryTheCataloguesNameWithoutIt()
+    {
+        var index = Index(("Iron Brothers.cat", Chaplains));
+
+        Assert.AreEqual(new RootEntry("cat-iron", "se-chapbike"), index.Find("40k", "Primaris Chaplain on Bike"));
+        Assert.AreEqual(new RootEntry("cat-iron", "se-chap"), index.Find("40k", "Primaris Chaplain"));
+        Assert.AreEqual(new RootEntry("cat-iron", "se-psyker"), index.Find("40k", "Primaris Psyker"));
+        Assert.AreEqual(new RootEntry("cat-iron", "se-intercessors"), index.Find("40k", "Primaris Intercessors"));
+    }
+
+    [TestMethod]
+    public void NameWithPrimaris_CountsOnlyTheWholeRestOfTheName()
+    {
+        var index = Index(("Iron Brothers.cat", Chaplains.Replace("<selectionEntry type=\"model\" id=\"se-chap\" name=\"Chaplain\"/>", "")));
+
+        Assert.IsNull(index.Find("40k", "Primaris Chaplain"));
+    }
+
     [TestMethod]
     public void Check_IdsSetByARule_AreValid()
     {

@@ -30,7 +30,7 @@ gets the ids beside the other models of its entry.
 
 **Changed by Addendum ARMAM-688:** §2 "exactly one" pair also reaches a member of a built unit: a model the catalogue
 lists under the unit a build sentence hits gets that unit's ids, one line per model beside the others; the id check
-counts a member's pair as valid.
+counts a member's pair as valid. A name starting with "Primaris" also hits by the rest of its name.
 
 ## Context
 
@@ -234,3 +234,13 @@ stopped by the timeout would lose it).
 - **No row in `aliases.json`:** the sentence and the catalogue name the member, nobody writes it down.
 - **Named exception widened** in Armamentarium's `CLAUDE.md` (Armamentarium ADR 0118 Addendum ARMAM-688).
 - Decisions of the maintainer. Rejected: the members as aliases (a row per box by hand); the unit as one line with the sum.
+- **"Primaris" dropped** (2026-11-01): the 10th-edition catalogues name "Chaplain", "Chaplain on Bike", "Lieutenant",
+  "Intercessor Squad" without the word the shops still write. A name starting with "Primaris" whose own name hits nothing
+  hits by the rest of the name, as it stands or with a unit word after it; never by a longer root name, so "Primaris
+  Chaplain" stays on the Chaplain on foot and "Primaris Chaplain on Bike" goes to the bike. Measured with `--id-report` on
+  the table of 2026-11-01: six names get ids (Chaplain, Hellblasters, Inceptors, Intercessors, Lieutenant, Techmarine),
+  no other name changes. "Primaris Chaplain on Bike" (99120101273) had been read as "Primaris Chaplain" without ids, the
+  bike name dropped because it hit nothing; the box is removed before this reader runs, so no backfill gives it the foot
+  model's ids, and the next run reads it anew.
+- Decision of the maintainer: only "Primaris", not any first word (a broader rule would build false hits and need a
+  measurement over the whole table).
