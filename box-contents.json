@@ -31500,6 +31500,33 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Warhammer Old World: Empire of Man - General of the Empire on Imperial Griffon",
+      "productCodes": [
+        "99122702001"
+      ],
+      "sources": [
+        "https://www.wellplayed.ch/products/warhammer-old-world-empire-of-man-general-of-the-empire-on-imperial-griffon",
+        "https://www.irresistibleforce.com.au/products/empire-of-man-general-of-the-empire-on-imperial-griffin",
+        "https://shop.afk.games/products/general-of-the-empire-on-imperial-griffon",
+        "https://www.goblingaming.co.uk/products/empire-of-man-general-of-the-empire-on-imperial-griffon",
+        "https://elementgames.co.uk/wargames-and-miniatures-by-manufacturer/games-workshop/warhammer-the-old-world/the-old-world-empire-of-man-general-of-the-empire-on-imperial-griffon"
+      ],
+      "readings": [
+        {
+          "reading": "tow",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "7b8f-602e-29cd-5786",
+              "entryId": "fe10-268f-9f75-1109",
+              "name": "General of the Empire",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
