@@ -1848,6 +1848,8 @@
             },
             {
               "role": "team",
+              "catalogueId": "sph-catalogue::stormcast-eternals",
+              "entryId": "sph::vigilant-brotherhood::02-lord-veritant",
               "name": "Lord-Veritant",
               "count": 1
             },
@@ -1919,6 +1921,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "sph-catalogue::stormcast-eternals",
+              "entryId": "sph::vigilant-brotherhood::02-lord-veritant",
               "name": "Lord-Veritant",
               "count": 1
             },
@@ -4029,11 +4033,15 @@
             },
             {
               "role": "team",
+              "catalogueId": "1bd9-ad7d-68ee-3b53",
+              "entryId": "678a-136a-c7ce-fe8c",
               "name": "Lord-Terminos",
               "count": 1
             },
             {
               "role": "team",
+              "catalogueId": "sph-catalogue::stormcast-eternals",
+              "entryId": "sph::vigilant-brotherhood::02-lord-veritant",
               "name": "Lord-Veritant",
               "count": 1
             },
@@ -4046,6 +4054,8 @@
             },
             {
               "role": "team",
+              "catalogueId": "1bd9-ad7d-68ee-3b53",
+              "entryId": "74e2-3cca-35ec-6e59",
               "name": "Reclusians",
               "count": 3
             },
@@ -4408,6 +4418,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "1d56-1cc3-de57-10e2",
               "name": "Space Marine Captain in Gravis Armour",
               "count": 1
             }
@@ -4630,6 +4642,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "34a5-8c7e-f468-82d1",
+              "entryId": "df57-7a59-75eb-ce63",
               "name": "Autarch",
               "count": 1
             }
@@ -4755,6 +4769,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "1f19-6509-d906-ca10",
+              "entryId": "48b7-e713-d5b1-f11c",
               "name": "Blade Champion",
               "count": 1
             }
@@ -5018,6 +5034,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "38de-521f-1ce0-44a0",
+              "entryId": "32ff-aec4-9669-c8a2",
               "name": "Haemonculus",
               "count": 1
             }
@@ -5040,6 +5058,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "38de-521f-1ce0-44a0",
+              "entryId": "5c1c-fa4a-3234-c711",
               "name": "Archon",
               "count": 1
             }
@@ -5430,6 +5450,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "sph-catalogue::hedonites-of-slaanesh",
+              "entryId": "sph::blades-of-the-lurid-dream::01-shardspeaker-of-slaanesh",
               "name": "Shardspeaker of Slaanesh",
               "count": 1
             }
@@ -5455,6 +5477,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "afdb-68a1-283e-3bf2",
+              "entryId": "4890-8c79-a2bd-b1ad",
               "name": "Lord of Pain",
               "count": 1
             }
@@ -5637,6 +5661,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "405e-c5f4-8579-b05c",
+              "entryId": "31c0-d6f2-3b6b-f196",
               "name": "Radukar the Wolf",
               "count": 1
             }
@@ -5933,6 +5959,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "f8cb-e518-1881-292",
+              "entryId": "f349-7fe2-2170-2f98",
               "name": "Mounted Yeomen",
               "count": 5
             }
@@ -5955,6 +5983,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "f8cb-e518-1881-292",
+              "entryId": "d7ca-225f-7ad7-c2df",
               "name": "Questing Knights",
               "count": 3
             }
@@ -6836,6 +6866,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "94bb-3284-ee14-57a1",
+              "entryId": "7a50-3722-8195-5877",
               "name": "Thunderwolf Cavalry",
               "count": 3
             }
@@ -6859,6 +6891,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "94bb-3284-ee14-57a1",
+              "entryId": "dc75-5a79-4121-1d72",
               "name": "Fenrisian Wolves",
               "count": 5
             }
@@ -7306,6 +7340,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "6c10-5b51-5bc0-8d2c",
               "name": "Space Marine Captain",
               "count": 1
             }
@@ -7356,6 +7392,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "ceb5-55c7-2d49-d952",
               "name": "Space Marine Chaplain",
               "count": 1
             }
@@ -7508,6 +7546,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "4ef9-15ce-e3e6-36de",
+              "entryId": "25e4-ead-faac-2531",
               "name": "Sanguinary Guard",
               "count": 3
             }
@@ -10603,6 +10643,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "34a5-8c7e-f468-82d1",
+              "entryId": "6863-bf42-238a-fd0b",
               "name": "Dark Reapers",
               "count": 1
             }
@@ -11965,6 +12007,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "b0ae-12a5-c84-ea45",
+              "entryId": "a6a1-1612-f982-31",
               "name": "Baneblade",
               "count": 1
             }
@@ -14653,16 +14697,22 @@
             },
             {
               "role": "team",
+              "catalogueId": "d81a-61dd-6d27-a3ce",
+              "entryId": "5d8f-5530-263d-651b",
               "name": "Riptide Battlesuit",
               "count": 1
             },
             {
               "role": "team",
+              "catalogueId": "d81a-61dd-6d27-a3ce",
+              "entryId": "a594-317-b90a-a226",
               "name": "Broadside Battlesuit",
               "count": 1
             },
             {
               "role": "team",
+              "catalogueId": "d81a-61dd-6d27-a3ce",
+              "entryId": "de16-2476-9749-b603",
               "name": "Crisis Battlesuits",
               "count": 3
             }
@@ -15552,6 +15602,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "1f19-6509-d906-ca10",
+              "entryId": "48b7-e713-d5b1-f11c",
               "name": "Blade Champion",
               "count": 1
             }
@@ -18971,6 +19023,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "405e-c5f4-8579-b05c",
+              "entryId": "2438-c0b5-e74f-8ad6",
               "name": "Belladamma Volga",
               "count": 1
             }
@@ -19121,6 +19175,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "405e-c5f4-8579-b05c",
+              "entryId": "9b8f-c508-b25b-691f",
               "name": "Lady Annika",
               "count": 1
             }
@@ -20453,6 +20509,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "405e-c5f4-8579-b05c",
+              "entryId": "eba7-9f89-cf56-ceb0",
               "name": "Radukar the Beast",
               "count": 1
             }
@@ -23186,6 +23244,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "1bd9-ad7d-68ee-3b53",
+              "entryId": "a050-164b-681b-eb5c",
               "name": "Vigilors",
               "count": 10
             }
@@ -23260,6 +23320,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "1bd9-ad7d-68ee-3b53",
+              "entryId": "4fcf-b770-62ff-9013",
               "name": "Stormdrake Guard",
               "count": 2
             }
@@ -23285,6 +23347,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "sph-catalogue::stormcast-eternals",
+              "entryId": "sph::yndrastas-spearhead::03-annihilators",
               "name": "Annihilators",
               "count": 3
             }
@@ -23310,6 +23374,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "1bd9-ad7d-68ee-3b53",
+              "entryId": "3c28-bdd-f7eb-4ac4",
               "name": "Vindictors",
               "count": 10
             }
@@ -23333,6 +23399,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "1bd9-ad7d-68ee-3b53",
+              "entryId": "e845-969a-b1fd-4b49",
               "name": "Praetors",
               "count": 3
             }
@@ -23771,6 +23839,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "c908-5f26-5bdf-2a48",
+              "entryId": "a632-1cca-9499-ce33",
               "name": "Chaos Knights",
               "count": 10
             }
@@ -24406,6 +24476,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "f8cb-e518-1881-292",
+              "entryId": "a70a-7cbc-f4ac-ebd8",
               "name": "Knights of the Realm",
               "count": 20
             }
@@ -25732,6 +25804,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "90ea-cdfe-fbbc-00de",
+              "entryId": "7fbe-ec13-eebe-f476",
               "name": "Sky Lantern",
               "count": 1
             }
@@ -27433,6 +27507,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "fd9b-d04e-362d-8e5d",
+              "entryId": "6fbb-fa07-52b9-d350",
               "name": "Knight Questoris",
               "count": 1
             }
@@ -28215,6 +28291,8 @@
             },
             {
               "role": "team",
+              "catalogueId": "5108-f98-63c2-53cb",
+              "entryId": "7e32-0162-71e2-57a0",
               "name": "Nurglings",
               "count": 3
             }
