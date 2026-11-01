@@ -6666,31 +6666,6 @@
       ]
     },
     {
-      "name": "Space Marines: Primaris Chaplain on Bike",
-      "productCodes": [
-        "99120101273"
-      ],
-      "sources": [
-        "https://www.irresistibleforce.com.au/products/space-marines-primaris-chaplain-on-bike",
-        "https://www.retrofixgames.com/products/warhammer-40k-space-marines-primaris-chaplain-on-bike",
-        "https://shop.afk.games/products/space-marines-primaris-chaplain-on-bike",
-        "https://obsidiangames.ca/products/space-marines-chaplain-on-bike",
-        "https://elementgames.co.uk/games-workshop/warhammer-40k/blood-angels/space-marines-primaris-chaplain-on-bike"
-      ],
-      "readings": [
-        {
-          "reading": "40k",
-          "entries": [
-            {
-              "role": "team",
-              "name": "Primaris Chaplain",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Space Marines: Primaris Techmarine",
       "productCodes": [
         "99120101278"
@@ -16890,31 +16865,6 @@
       ]
     },
     {
-      "name": "Age of Sigmar Slaves to Darkness Chaos Lord on Karkadrak",
-      "productCodes": [
-        "99120201124"
-      ],
-      "sources": [
-        "https://www.retrofixgames.com/products/warhammer-age-of-sigmar-slaves-to-darkness-chaos-lord-on-karkadrak",
-        "https://shop.afk.games/products/slaves-to-darkness-chaos-lord-on-karkadrak",
-        "https://www.goblingaming.co.uk/products/chaos-lord-on-karkadrak"
-      ],
-      "readings": [
-        {
-          "reading": "aos",
-          "entries": [
-            {
-              "role": "team",
-              "catalogueId": "sph-catalogue::slaves-to-darkness",
-              "entryId": "sph::bloodwind-legion::01-chaos-lord",
-              "name": "Chaos Lord",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Slaves to Darkness Chaos Knights",
       "productCodes": [
         "99120201125"
@@ -18361,33 +18311,6 @@
               "entryId": "sph::castellite-company::04-freeguild-cavaliers",
               "name": "Freeguild Cavaliers",
               "count": 5
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Cities of Sigmar: Fusil-Major on Ogor Warhulk",
-      "productCodes": [
-        "99120202047"
-      ],
-      "sources": [
-        "https://www.irresistibleforce.com.au/products/cities-of-sigmar-fusil-major-on-ogor-warhulk",
-        "https://abyssgamestore.ca/products/cities-of-sigmar-fusil-major-on-ogor-warhulk-86-20",
-        "https://shop.afk.games/products/fusil-major-on-ogor-warhulk",
-        "https://www.goblingaming.co.uk/products/age-of-sigmar-cities-of-sigmar-fusil-major-on-ogor-warhulk",
-        "https://mrmuffinstrains.com/products/gw-86-20"
-      ],
-      "readings": [
-        {
-          "reading": "aos",
-          "entries": [
-            {
-              "role": "team",
-              "catalogueId": "sph-catalogue::cities-of-sigmar",
-              "entryId": "sph::fusil-platoon::01-fusil-major-on-ogor-warhulk",
-              "name": "Fusil-Major",
-              "count": 1
             }
           ]
         }
@@ -25145,33 +25068,6 @@
       ]
     },
     {
-      "name": "Games Workshop 08-19 - Warhammer: The Old World - Warriors of Chaos: Lord on Chaos Dragon",
-      "productCodes": [
-        "99122701013"
-      ],
-      "sources": [
-        "https://mrmuffinstrains.com/products/gw-08-19",
-        "https://elementgames.co.uk/wargames-and-miniatures-by-manufacturer/games-workshop/warhammer-the-old-world/warriors-of-chaos-lord-on-chaos-dragon"
-      ],
-      "readings": [
-        {
-          "reading": "tow",
-          "entries": [
-            {
-              "role": "team",
-              "name": "Lord",
-              "count": 1
-            },
-            {
-              "role": "team",
-              "name": "Chaos Sorcerer",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Warhammer Old World: Warriors of Chaos - Chaos Marauders (EN)",
       "productCodes": [
         "99122701014"
@@ -31476,37 +31372,6 @@
       ]
     },
     {
-      "name": "Astra Militarum: Krieg Heavy Weapons Squad",
-      "productCodes": [
-        "99120105130"
-      ],
-      "sources": [
-        "https://www.irresistibleforce.com.au/products/astra-militarum-krieg-heavy-weapons-squad",
-        "https://shop.afk.games/products/astra-militarum-krieg-heavy-weapons-squad",
-        "https://obsidiangames.ca/products/krieg-heavy-weapons-squad",
-        "https://elementgames.co.uk/games-workshop/warhammer-40k/imperial-guard/astra-militarum-krieg-heavy-weapons-squad"
-      ],
-      "readings": [
-        {
-          "reading": "40k",
-          "entries": [
-            {
-              "role": "team",
-              "catalogueId": "b0ae-12a5-c84-ea45",
-              "entryId": "1669-d311-eff9-243b",
-              "name": "Krieg Heavy Weapons Squad",
-              "count": 1
-            },
-            {
-              "role": "team",
-              "name": "Fire Coordinator",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Warhammer 40K Astra Militarum Ciaphas Cain",
       "productCodes": [
         "99120105152"
@@ -31806,32 +31671,6 @@
               "catalogueId": "b654-a18a-ea1-3bf2",
               "entryId": "dbe5-257e-e2bd-1b40",
               "name": "Necron Overlord",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Slaves to Darkness: Darkoath Chieftain on Warsteed",
-      "productCodes": [
-        "99120201181"
-      ],
-      "sources": [
-        "https://www.irresistibleforce.com.au/products/slaves-to-darkness-darkoath-chieftain-on-warsteed",
-        "https://abyssgamestore.ca/products/slaves-to-darkness-darkoath-chieftain-on-warsteed-83-53",
-        "https://www.retrofixgames.com/products/warhammer-age-of-sigmar-slaves-to-darkness-darkoath-chieftain-on-warsteed",
-        "https://obsidiangames.ca/products/slaves-to-darkness-darkoath-chieftain-on-warsteed"
-      ],
-      "readings": [
-        {
-          "reading": "aos",
-          "entries": [
-            {
-              "role": "team",
-              "catalogueId": "2c23-a678-196b-ad69",
-              "entryId": "b09c-3f57-8c75-aa38",
-              "name": "Darkoath Chieftain",
               "count": 1
             }
           ]
@@ -32197,33 +32036,6 @@
               "catalogueId": "b53b-1217-df2e-66d2",
               "entryId": "2f4b-8632-d9fe-ac87",
               "name": "Abhorrant Cardinal",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Soulblight Gravelords: Vampire Lord on Nightmare Steed",
-      "productCodes": [
-        "99120207181"
-      ],
-      "sources": [
-        "https://www.irresistibleforce.com.au/products/soulblight-gravelords-vampire-lord-on-nightmare-steed",
-        "https://www.retrofixgames.com/products/age-of-sigmar-soulblight-gravelords-vampire-lord-on-nightmare-steed",
-        "https://shop.afk.games/products/vampire-lord-on-nightmare-steed",
-        "https://obsidiangames.ca/products/vampire-lord-on-nightmare-steed",
-        "https://elementgames.co.uk/new-warhammer-age-of-sigmar/soulblight-gravelords-vampire-lord-on-nightmare-steed"
-      ],
-      "readings": [
-        {
-          "reading": "aos",
-          "entries": [
-            {
-              "role": "team",
-              "catalogueId": "sph-catalogue::soulblight-gravelords",
-              "entryId": "sph::bloodcrave-hunt::01-vampire-lord",
-              "name": "Vampire Lord",
               "count": 1
             }
           ]
@@ -32743,32 +32555,6 @@
               "catalogueId": "c908-5f26-5bdf-2a48",
               "entryId": "617-b6cf-592e-8832",
               "name": "Chaos Lord",
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Warhammer Old World: Empire of Man - General of the Empire on Imperial Griffon",
-      "productCodes": [
-        "99122702001"
-      ],
-      "sources": [
-        "https://www.wellplayed.ch/products/warhammer-old-world-empire-of-man-general-of-the-empire-on-imperial-griffon",
-        "https://www.irresistibleforce.com.au/products/empire-of-man-general-of-the-empire-on-imperial-griffin",
-        "https://shop.afk.games/products/general-of-the-empire-on-imperial-griffon",
-        "https://elementgames.co.uk/wargames-and-miniatures-by-manufacturer/games-workshop/warhammer-the-old-world/the-old-world-empire-of-man-general-of-the-empire-on-imperial-griffon"
-      ],
-      "readings": [
-        {
-          "reading": "tow",
-          "entries": [
-            {
-              "role": "team",
-              "catalogueId": "7b8f-602e-29cd-5786",
-              "entryId": "fe10-268f-9f75-1109",
-              "name": "General of the Empire",
               "count": 1
             }
           ]

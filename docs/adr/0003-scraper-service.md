@@ -553,9 +553,16 @@ The table grows only by hand so far. Measured on 2026-10-17:
   ("Darkoath Chieftain on Warsteed", "Primaris Chaplain on bike"); the agreement takes it instead of the shorter one when
   it names a root entry. "on" still ends a name that does not hit ("10 Kroot on Citadel bases").
 - **The `--host` probe** shows a longer name ("or …") and members ("member …").
-- **Boxes already in the table** keep their rows: a reader change never touches a box with ids. The sixteen service boxes
-  measured are removed in a data pull request the maintainer merges, their marks in `state.json` are deleted, and the
-  next run proposes them with this reader.
+- **Boxes already in the table** keep their rows: a reader change never touches a box with ids. Of the sixteen service
+  boxes measured, the `--host` probe on the server read eight better with this reader in at least two sources: Krieg
+  Heavy Weapons Squad, Darkoath Chieftain on Warsteed, Vampire Lord on Nightmare Steed, General of the Empire on Imperial
+  Griffon, Chaos Lord on Karkadrak, Fusil-Major on Ogor Warhulk, Primaris Chaplain on Bike, Lord on Chaos Dragon. They
+  are removed in a data pull request the maintainer merges, their marks in `state.json` are deleted, and the next run
+  proposes them with this reader. The other eight stay: Krieg Command Squad and Grey Knight Strike Squad name no members
+  and would wait; Cadian Command Squad names "Veteran Guardsmen", the catalogue "Cadian Veteran Guardsman", no member, it
+  would wait; Ravenwing Command Squad is described by most sources as its Black Knights build; the Frostlord box's sources
+  name different mounts; the Tomb King box builds one of two heroes; Warrior Priests of Ulric and Cadian Heavy Weapons
+  Squad read as before.
 - Decisions of the maintainer. Rejected: one line "Krieg Heavy Weapons Squad" with the sum of four (the Fire Coordinator
   would lose its name); the members through `aliases.json` (one row per box by hand); an article on a unit counting the
   catalogue's minimum (the box can differ); every entry of type unit as a unit (single heroes are units of one model in
