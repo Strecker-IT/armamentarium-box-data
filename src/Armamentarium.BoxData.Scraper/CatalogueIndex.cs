@@ -69,6 +69,8 @@ public sealed partial class CatalogueIndex
     // The word a shop leaves off a unit's name ("Intercessors" for "Intercessor Squad").
     private static readonly string[] UnitWords = ["squad", "mob", "unit", "pack", "band", "regiment", "team"];
 
+    private static readonly string PrimarisPrefix = ContentLines.Normalize("Primaris") + " ";
+
     /// <summary>
     /// The name names a unit of several models ("Krieg Heavy Weapons Squad"): a build of it by article states no model count
     /// (ADR 0003 Addendum ARMAM-688).
@@ -149,15 +151,16 @@ public sealed partial class CatalogueIndex
         }
 
         var key = ContentLines.Normalize(name);
-        if (names.TryGetValue(key, out var entries))
+        if (Whole(key) is { } entries)
         {
             return entries;
         }
 
-        var withUnitWord = UnitWords.Select(w => names.GetValueOrDefault($"{key} {w}")).OfType<HashSet<RootEntry>>().SelectMany(e => e).ToHashSet();
-        if (withUnitWord.Count > 0)
+        // The 10th-edition catalogues dropped "Primaris"; only the whole rest counts, never a longer name, so Chaplain and
+        // Chaplain on Bike stay apart (ADR 0004 Addendum ARMAM-688).
+        if (key.StartsWith(PrimarisPrefix, StringComparison.Ordinal) && Whole(key[PrimarisPrefix.Length..]) is { } unprefixed)
         {
-            return withUnitWord;
+            return unprefixed;
         }
 
         var words = key.Split(' ', StringSplitOptions.RemoveEmptyEntries);
@@ -182,6 +185,18 @@ public sealed partial class CatalogueIndex
         }
 
         return null;
+
+        // The name itself, or the name with a unit word after it.
+        IReadOnlyCollection<RootEntry>? Whole(string k)
+        {
+            if (names.TryGetValue(k, out var exact))
+            {
+                return exact;
+            }
+
+            var withUnitWord = UnitWords.Select(w => names.GetValueOrDefault($"{k} {w}")).OfType<HashSet<RootEntry>>().SelectMany(e => e).ToHashSet();
+            return withUnitWord.Count > 0 ? withUnitWord : null;
+        }
     }
 
     /// <summary>
