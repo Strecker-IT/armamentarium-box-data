@@ -207,6 +207,34 @@ public sealed class NameRepairTests
     }
 
     [TestMethod]
+    public void Apply_GapBesideALineWithCountCandidates_Stays()
+    {
+        var table = Box("shop.test", Gap("Primaris Sergeant", 1),
+            """{"role": "team", "catalogueId": "cat-iron", "entryId": "se-sergeant", "name": "Sergeant", "countCandidates": [1, 2]}""");
+
+        Assert.AreEqual(0, NameRepair.Apply(table, Hosts, Iron()).Removed.Count);
+    }
+
+    // Which role is right is not known; the gap stays.
+    [TestMethod]
+    public void Apply_GapOfAnotherRole_Stays()
+    {
+        var table = Box("shop.test", Gap("Primaris Sergeant", 1).Replace("\"team\"", "\"extra\""), Listed("Sergeant", "se-sergeant", 1));
+
+        Assert.AreEqual(0, NameRepair.Apply(table, Hosts, Iron()).Removed.Count);
+    }
+
+    // An entry may name its own reading (schema); a line of another reading is no twin.
+    [TestMethod]
+    public void Apply_GapBesideALineOfAnotherReading_Stays()
+    {
+        var table = Box("shop.test", Gap("Primaris Sergeant", 1),
+            Listed("Sergeant", "se-sergeant", 1).Replace("{\"role\"", "{\"reading\": \"40k\", \"role\""));
+
+        Assert.AreEqual(0, NameRepair.Apply(table, Hosts, Iron()).Removed.Count);
+    }
+
+    [TestMethod]
     public void Apply_GapOfAHandBox_Stays()
     {
         var table = Box("review.test", Gap("Primaris Sergeant", 1), Listed("Sergeant", "se-sergeant", 1));

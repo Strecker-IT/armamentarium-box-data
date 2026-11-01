@@ -84,16 +84,23 @@ public static partial class NameRepair
     }
 
     // The gap names the root entry another line carries as that entry itself, not as an alias or a member, which carry their
-    // target's ids under their own name (ADR 0004 Addenda ARMAM-642, ARMAM-688); counts must match, candidates never do.
-    private static bool IsTwin(JsonArray entries, JsonObject gap, string reading, string name, CatalogueIndex catalogues) =>
-        gap["count"] is JsonValue count
-        && !catalogues.IsAlias(reading, name)
-        && catalogues.Find(reading, name) is { } ids
-        && entries.OfType<JsonObject>().Any(e => e != gap
-            && (string?)e["catalogueId"] == ids.CatalogueId
-            && (string?)e["entryId"] == ids.EntryId
-            && e["count"] is JsonValue other && (int)other == (int)count
-            && (string?)e["name"] is { } own
-            && !catalogues.IsAlias(reading, own)
-            && catalogues.Find(reading, own) == ids);
+    // target's ids under their own name (ADR 0004 Addenda ARMAM-642, ARMAM-688). Reading, role and count must match; which
+    // role or count is right is not known otherwise, and candidates never match.
+    private static bool IsTwin(JsonArray entries, JsonObject gap, string block, string name, CatalogueIndex catalogues)
+    {
+        string ReadingOf(JsonObject e) => (string?)e["reading"] ?? block;
+        var reading = ReadingOf(gap);
+        return gap["count"] is JsonValue count
+            && !catalogues.IsAlias(reading, name)
+            && catalogues.Find(reading, name) is { } ids
+            && entries.OfType<JsonObject>().Any(e => e != gap
+                && ReadingOf(e) == reading
+                && (string?)e["role"] == (string?)gap["role"]
+                && (string?)e["catalogueId"] == ids.CatalogueId
+                && (string?)e["entryId"] == ids.EntryId
+                && e["count"] is JsonValue other && (int)other == (int)count
+                && (string?)e["name"] is { } own
+                && !catalogues.IsAlias(reading, own)
+                && catalogues.Find(reading, own) == ids);
+    }
 }
