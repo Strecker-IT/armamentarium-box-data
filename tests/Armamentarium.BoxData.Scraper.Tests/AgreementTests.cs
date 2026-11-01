@@ -428,4 +428,34 @@ public sealed class AgreementTests
         Assert.IsNull(result.Waiting);
         Assert.AreEqual(1, result.Entries!.Single().Counts.Single());
     }
+
+    // ARMAM-708: the shop text of "General of the Empire on Imperial Griffon" (goblingaming, 2026-11-01) against a
+    // catalogue shaped like BSData's "The Empire of Man": the mount is a shared entry, not a root, so the hero on foot
+    // counts once; the alternative build and the head options add nothing. The catalogue is written for this test.
+    [TestMethod]
+    public void Agree_HeroOnAMountThatIsOnlyAnOption_IsTheHeroOnce()
+    {
+        var index = new CatalogueIndex();
+        index.AddCatalogue("tow", "The Empire of Man.json", System.Text.Encoding.UTF8.GetBytes("""
+            {"catalogue": {"id": "cat-empire", "name": "The Empire of Man", "library": false,
+              "entryLinks": [
+                {"id": "el-general", "name": "General of the Empire", "targetId": "sse-general", "type": "selectionEntry"},
+                {"id": "el-wizard", "name": "Wizard Lord", "targetId": "sse-wizard", "type": "selectionEntry"}],
+              "sharedSelectionEntries": [
+                {"type": "model", "id": "sse-general", "name": "General of the Empire"},
+                {"type": "model", "id": "sse-wizard", "name": "Wizard Lord"},
+                {"type": "model", "id": "sse-griffon", "name": "Imperial Griffon"}]}}
+            """));
+        const string text = "<p>This multipart plastic kit builds a General of the Empire on Imperial Griffon for use in Empire of Man " +
+            "armies in games of Warhammer: The Old World. The kit includes 2x head options for the General of the Empire, and they " +
+            "can be built with a sword or lance, and a shield. There are also parts to build the Griffon with a second head. " +
+            "Alternatively, this kit can build a Wizard Lord on Imperial Griffon.</p>" +
+            "<p>This kit contains 74 plastic components, and 1x Citadel 60mm by 100mm Rectangular Base.</p>";
+
+        var result = Agreement.Agree([Sentences("a.test", text), Sentences("b.test", text)], name => index.Find("tow", name)?.EntryId);
+
+        Assert.IsNull(result.Waiting);
+        CollectionAssert.AreEqual(
+            new[] { ("General of the Empire", 1) }, result.Entries!.Select(e => (e.Name, e.Counts.Single())).ToArray());
+    }
 }
