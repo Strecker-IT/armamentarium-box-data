@@ -78,7 +78,7 @@ and ADR 0004:
   more); never merged by the service, also with `--auto-merge`, and counted among the five open (ADR 0004 Addendum ARMAM-597).
 - At the start of a run, before the id check, one pull request `scraper/backfill-ids` that gives the gaps of boxes it wrote the ids their names now name,
   merged like a box; after it, one draft `scraper/fix-names` that repairs names read before the reader's fixes and removes
-  upgrade sets whole, never merged (ADR 0004 Addendum ARMAM-598, ADR 0003 Addendum ARMAM-610). `--id-report` prints the gaps per reading with their reason and changes nothing.
+  upgrade sets whole, never merged (ADR 0004 Addendum ARMAM-598, ADR 0003 Addendum ARMAM-610); it also removes a gap beside the line of its own root entry with the same count (ADR 0004 Addendum ARMAM-707). `--id-report` prints the gaps per reading with their reason and changes nothing.
 - Mails the maintainer (ADR 0003 Addendum ARMAM-600): a failed run through `OnFailure=` and the failure unit
   (`--notify-failure`), a run's notices at its end; through the mailbox and the password credential of the Armamentarium
   web services, nothing from the journal.

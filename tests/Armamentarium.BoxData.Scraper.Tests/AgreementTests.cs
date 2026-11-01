@@ -406,4 +406,26 @@ public sealed class AgreementTests
         Assert.AreEqual("Rust Chieftain on Iron Steed", both.Entries!.Single().Name);
         Assert.AreEqual("Rust Chieftain", footOnly.Entries!.Single().Name);
     }
+
+    // ARMAM-707: with the "Primaris" rule (ADR 0004 Addendum ARMAM-688) both names of one model hit one root entry and
+    // confirm each other as one line; before it, each became a line of its own. The catalogue is written for this test.
+    [TestMethod]
+    public void Agree_PrimarisNameAndItsShortName_GiveOneEntry()
+    {
+        var index = new CatalogueIndex();
+        index.AddCatalogue("kt", "Iron.cat", System.Text.Encoding.UTF8.GetBytes("""
+            <catalogue id="cat-iron" name="Iron Brothers" library="false">
+              <selectionEntries>
+                <selectionEntry type="model" id="se-sergeant" name="Sergeant"/>
+              </selectionEntries>
+            </catalogue>
+            """));
+
+        var result = Agreement.Agree(
+            [English("a.test", L(1, "Primaris Sergeant")), English("b.test", L(1, "Sergeant"))],
+            name => index.Find("kt", name)?.EntryId);
+
+        Assert.IsNull(result.Waiting);
+        Assert.AreEqual(1, result.Entries!.Single().Counts.Single());
+    }
 }

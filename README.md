@@ -145,6 +145,7 @@ Every run, with or without the switch, it also checks the ids the table holds ag
 names no root entry of its reading any more goes into one draft (`scraper/stale-ids`) that leaves the entry a name and a
 count; the service never merges that draft. An id under a changed name is only reported
 (`docs/adr/0004-auto-merge-and-ids-by-name.md`, Addendum ARMAM-597). Names it read before a fix of its reader are
-repaired in one draft (`scraper/fix-names`) it never merges (Addendum ARMAM-598). Upgrade sets (parts, weapons, icons
+repaired in one draft (`scraper/fix-names`) it never merges (Addendum ARMAM-598); the same draft removes a gap that
+names the root entry another line of its reading carries with the same count (Addendum ARMAM-707). Upgrade sets (parts, weapons, icons
 without a whole model) hold no box contents: the service does not look for them and the repair draft removes them
 (`docs/adr/0003-scraper-service.md`, Addendum ARMAM-610).

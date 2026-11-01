@@ -15,11 +15,14 @@ public sealed record NameRepairs(IReadOnlyList<NameRepairing> Renamed, IReadOnly
 /// leaves its box, prose read into the name ("… accompanied by", "accompanying …", "… model", "sinister …") is cut, or the
 /// entry leaves when the cut name is already in the reading. An upgrade set leaves whole. A reading left without entries goes, a box left without readings goes whole (the schema asks
 /// for one) and comes back with the next run. Only gaps of service boxes: an entry with ids names a root entry, a box
-/// written by hand is a decision (<see cref="IdBackfill.IsServiceBox"/>). Builds the content of a draft the maintainer merges.
+/// written by hand is a decision (<see cref="IdBackfill.IsServiceBox"/>). With the catalogues, a gap whose name now names
+/// the entry another line of its reading carries under its own name with the same count leaves too: two sources named one
+/// model in two ways before a name rule joined them (ADR 0004 Addendum ARMAM-707). Builds the content of a draft the
+/// maintainer merges.
 /// </summary>
 public static partial class NameRepair
 {
-    public static NameRepairs Apply(JsonNode table, IReadOnlySet<string> hosts)
+    public static NameRepairs Apply(JsonNode table, IReadOnlySet<string> hosts, CatalogueIndex? catalogues = null)
     {
         var renamed = new List<NameRepairing>();
         var removed = new List<NameRepairing>();
@@ -52,7 +55,7 @@ public static partial class NameRepair
                     var cut = ContentLines.Tidy(name);
                     var twice = cut is not null && cut != name && entries.OfType<JsonObject>().Any(e => e != entry
                         && ContentLines.Normalize((string)e["name"]!) == ContentLines.Normalize(cut));
-                    if (cut is null || twice)
+                    if (cut is null || twice || (catalogues is not null && IsTwin(entries, entry, reading, cut, catalogues)))
                     {
                         entries.Remove(entry);
                         removed.Add(new NameRepairing(boxName, reading, name, null));
@@ -79,4 +82,18 @@ public static partial class NameRepair
 
         return new NameRepairs(renamed, removed, boxesRemoved);
     }
+
+    // The gap names the root entry another line carries as that entry itself, not as an alias or a member, which carry their
+    // target's ids under their own name (ADR 0004 Addenda ARMAM-642, ARMAM-688); counts must match, candidates never do.
+    private static bool IsTwin(JsonArray entries, JsonObject gap, string reading, string name, CatalogueIndex catalogues) =>
+        gap["count"] is JsonValue count
+        && !catalogues.IsAlias(reading, name)
+        && catalogues.Find(reading, name) is { } ids
+        && entries.OfType<JsonObject>().Any(e => e != gap
+            && (string?)e["catalogueId"] == ids.CatalogueId
+            && (string?)e["entryId"] == ids.EntryId
+            && e["count"] is JsonValue other && (int)other == (int)count
+            && (string?)e["name"] is { } own
+            && !catalogues.IsAlias(reading, own)
+            && catalogues.Find(reading, own) == ids);
 }

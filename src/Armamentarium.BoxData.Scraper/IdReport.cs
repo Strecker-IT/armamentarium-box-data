@@ -48,7 +48,7 @@ public static class IdReport
             Section("no hit", names.Where(g => g.Hit is null && g.Candidates.Count == 0).ToList(), g => g.Key);
         }
 
-        var repairs = NameRepair.Apply(table.DeepClone(), hosts);
+        var repairs = NameRepair.Apply(table.DeepClone(), hosts, catalogues);
         log($"== name repair: {repairs.Renamed.Count} renamed, {repairs.Removed.Count} removed, {repairs.BoxesRemoved.Count} box(es) removed");
         foreach (var one in repairs.Renamed.Concat(repairs.Removed))
         {

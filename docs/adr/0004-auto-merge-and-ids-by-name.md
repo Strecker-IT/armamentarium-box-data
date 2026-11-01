@@ -32,6 +32,9 @@ gets the ids beside the other models of its entry.
 lists under the unit a build sentence hits gets that unit's ids, one line per model beside the others; the id check
 counts a member's pair as valid. A name starting with "Primaris" also hits by the rest of its name.
 
+**Changed by Addendum ARMAM-707:** Addendum ARMAM-598 "no root entry is listed twice in a reading": the gap that stays a
+gap beside the line of its root entry leaves its box in `scraper/fix-names` when both state the same count.
+
 ## Context
 
 The service runs on the server since 2026-10-17 (ARMAM-593). Its drafts wait for the maintainer to add catalogue ids,
@@ -244,3 +247,20 @@ stopped by the timeout would lose it).
   model's ids, and the next run reads it anew.
 - Decision of the maintainer: only "Primaris", not any first word (a broader rule would build false hits and need a
   measurement over the whole table).
+
+## Addendum ARMAM-707 — a gap beside the line of its own entry (2026-11-01)
+
+- **Measured** with `--id-report` on the table of 2026-11-01: five service boxes held one model twice, read before a rule
+  of a hit joined its two names — "Primaris Techmarine" beside "Techmarine" (99120101278), "Aeldari Windriders" beside
+  "Windriders", "Aeldari Wraithguard" beside "Wraithguard", "Tyranid Hive Tyrant" beside "Hive Tyrant", "towering
+  Wraithknight" beside "Aeldari Wraithknight". Two sources each named the model their own way; nothing hit the longer
+  name, so the matching of sources kept two keys and two lines. Today both names hit one root entry and give one key; a new
+  box is read as one line. The backfill leaves the gap a gap, because its reading lists the entry already.
+- **The repair** (`scraper/fix-names`, never merged by the service) removes a gap of a service box whose name, cut as the
+  reader cuts it, names a root entry another line of the reading carries with the same count, and that line's own name
+  names the same entry. An alias line or a member line carries its target's ids under a name of its own (Addenda
+  ARMAM-642, ARMAM-688) and never counts; an alias gap stays; a gap with `countCandidates`, or with another count than the
+  line, stays: which count is right is not known.
+- **No widening of the named exception:** the repair sets no id and runs only in the draft the maintainer merges.
+- Decisions of the maintainer. Rejected: removing the gap in `scraper/backfill-ids` (merged without the hand check); the
+  line with ids always winning, whatever the count.
