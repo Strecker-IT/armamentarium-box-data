@@ -33024,6 +33024,33 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Games Workshop 08-19 - Warhammer: The Old World - Warriors of Chaos: Lord on Chaos Dragon",
+      "productCodes": [
+        "99122701013"
+      ],
+      "sources": [
+        "https://mrmuffinstrains.com/products/gw-08-19",
+        "https://elementgames.co.uk/wargames-and-miniatures-by-manufacturer/games-workshop/warhammer-the-old-world/warriors-of-chaos-lord-on-chaos-dragon"
+      ],
+      "readings": [
+        {
+          "reading": "tow",
+          "entries": [
+            {
+              "role": "team",
+              "name": "Lord",
+              "count": 1
+            },
+            {
+              "role": "team",
+              "name": "Chaos Sorcerer",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
