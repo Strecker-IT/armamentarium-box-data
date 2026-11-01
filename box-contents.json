@@ -2427,6 +2427,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "ceb5-55c7-2d49-d952",
               "name": "Primaris Chaplain",
               "count": 1
             },
@@ -4691,6 +4693,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "ce15-e87e-7cff-b129",
               "name": "Primaris Lieutenant",
               "count": 1
             }
@@ -6924,6 +6928,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "7102-b3a4-9bfc-1b84",
               "name": "Primaris Hellblasters",
               "count": 10
             }
@@ -6951,6 +6957,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "8da0-4570-c3c-819f",
               "name": "Primaris Intercessors",
               "count": 10
             }
@@ -6976,6 +6984,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "3e14-2a-d358-6ada",
               "name": "Primaris Inceptors",
               "count": 3
             }
