@@ -21,7 +21,7 @@ public sealed class GitHubException(string message, int? status = null) : Except
 public sealed class GitHubRepository(HttpClient http, string? token, TimeSpan? mergeRetry = null, Action<string>? log = null)
     : IRepository
 {
-    public const string Repository = "LordTyberias/armamentarium-box-data";
+    public const string Repository = "Strecker-IT/armamentarium-box-data";
     public const string BranchPrefix = "scraper/";
     public const int MergeAttempts = 3;
 

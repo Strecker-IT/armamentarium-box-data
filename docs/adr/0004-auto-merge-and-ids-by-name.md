@@ -38,6 +38,9 @@ gap there; it leaves its box in `scraper/fix-names` when the line of that entry 
 **Changed by Addendum ARMAM-708:** §3 `tow` comes from `BSData/warhammer-the-old-world`, latest release, not from
 `vflam/Warhammer-The-Old-World`.
 
+**Changed by Addendum ARMAM-738:** the own repositories moved to the organisation `Strecker-IT`; §3 `aos` reads
+`Strecker-IT/armamentarium-spearhead-data`, and the service opens its pull requests in `Strecker-IT/armamentarium-box-data`.
+
 ## Context
 
 The service runs on the server since 2026-10-17 (ARMAM-593). Its drafts wait for the maintainer to add catalogue ids,
@@ -68,7 +71,7 @@ on Devlan. A name found in more than one catalogue (`Superior`) gets none.
    |---|---|---|
    | `40k` | `BSData/wh40k-10e` (XML), `BSData/wh40k-11e` (JSON) | `main` |
    | `kt` | `BSData/wh40k-killteam` | latest release |
-   | `aos` | `BSData/age-of-sigmar-4th`, `LordTyberias/armamentarium-spearhead-data` | latest release, `main` |
+   | `aos` | `BSData/age-of-sigmar-4th`, `LordTyberias/armamentarium-spearhead-data` (now Strecker-IT, Addendum ARMAM-738) | latest release, `main` |
    | `tow` | `vflam/Warhammer-The-Old-World` | latest release |
    | `hh` | `BSData/horus-heresy-3rd-edition` (JSON) | `main` |
 
@@ -285,3 +288,14 @@ stopped by the timeout would lose it).
   their ids in `scraper/backfill-ids` (Addendum ARMAM-598).
 - Decisions of the maintainer. Rejected: a rule that a single kit counts one without a hit (prose would count as models);
   a line of its own for the mount (the catalogue builds it as an option).
+
+## Addendum ARMAM-738 — the own repositories under Strecker-IT (2026-11-04)
+
+- **Measured** on 2026-11-04 at 20:41: a run by hand stopped before it wrote anything. The Spearhead reading answered
+  404 (`aos: LordTyberias/armamentarium-spearhead-data unreadable`), then the list of open pull requests
+  (`repos/LordTyberias/armamentarium-box-data/pulls` answered 404).
+- **The repositories moved:** on 2026-11-04 `armamentarium-box-data`, `armamentarium-spearhead-data` and
+  `armamentarium-combat-patrol-data` went to the organisation `Strecker-IT`, the old addresses answer 404 with no
+  forwarding. The app switched in Armamentarium ARMAM-737; §3 follows it ("a change there is a change here"). The
+  service's token names `Strecker-IT` as resource owner.
+- **No rule changes:** same repositories, same branch `main`, same ids. The table row of §3 keeps the old owner and points to this addendum.

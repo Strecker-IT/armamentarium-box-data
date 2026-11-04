@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/LordTyberias/armamentarium-box-data/box-contents.schema.json",
+  "$id": "https://github.com/Strecker-IT/armamentarium-box-data/box-contents.schema.json",
   "title": "Box contents, format 1",
   "type": "object",
   "additionalProperties": false,

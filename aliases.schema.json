@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/LordTyberias/armamentarium-box-data/aliases.schema.json",
+  "$id": "https://github.com/Strecker-IT/armamentarium-box-data/aliases.schema.json",
   "title": "Aliases of own names, format 1",
   "description": "A model's own name in a reading and the root entry it belongs to, named by the entry's name and its catalogue's name. Ids come from the catalogues, never from this file (ADR 0004 Addendum ARMAM-642).",
   "type": "object",
