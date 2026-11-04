@@ -71,7 +71,7 @@ on Devlan. A name found in more than one catalogue (`Superior`) gets none.
    |---|---|---|
    | `40k` | `BSData/wh40k-10e` (XML), `BSData/wh40k-11e` (JSON) | `main` |
    | `kt` | `BSData/wh40k-killteam` | latest release |
-   | `aos` | `BSData/age-of-sigmar-4th`, `LordTyberias/armamentarium-spearhead-data` | latest release, `main` |
+   | `aos` | `BSData/age-of-sigmar-4th`, `LordTyberias/armamentarium-spearhead-data` (now Strecker-IT, Addendum ARMAM-738) | latest release, `main` |
    | `tow` | `vflam/Warhammer-The-Old-World` | latest release |
    | `hh` | `BSData/horus-heresy-3rd-edition` (JSON) | `main` |
 
@@ -298,4 +298,4 @@ stopped by the timeout would lose it).
   `armamentarium-combat-patrol-data` went to the organisation `Strecker-IT`, the old addresses answer 404 with no
   forwarding. The app switched in Armamentarium ARMAM-737; §3 follows it ("a change there is a change here"). The
   service's token names `Strecker-IT` as resource owner.
-- **No rule changes:** same repositories, same branch `main`, same ids. The table row of §3 stays as it was written.
+- **No rule changes:** same repositories, same branch `main`, same ids. The table row of §3 keeps the old owner and points to this addendum.
