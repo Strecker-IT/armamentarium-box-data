@@ -47,7 +47,7 @@ public sealed partial class CatalogueIndex
         new("40k", "BSData", "wh40k-11e", "main"),
         new("kt", "BSData", "wh40k-killteam", null),
         new("aos", "BSData", "age-of-sigmar-4th", null),
-        new("aos", "LordTyberias", "armamentarium-spearhead-data", "main", Preferred: true),
+        new("aos", "Strecker-IT", "armamentarium-spearhead-data", "main", Preferred: true),
         new("tow", "BSData", "warhammer-the-old-world", null),
         new("hh", "BSData", "horus-heresy-3rd-edition", "main"),
     ];

@@ -34,7 +34,7 @@ public sealed class GitHubRepositoryTests
 
         Assert.AreEqual("{\"format\": 1}\n", text);
         Assert.AreEqual("abc", sha);
-        Assert.AreEqual("/repos/LordTyberias/armamentarium-box-data/contents/box-contents.json?ref=main", handler.Requests[0].Path);
+        Assert.AreEqual("/repos/Strecker-IT/armamentarium-box-data/contents/box-contents.json?ref=main", handler.Requests[0].Path);
     }
 
     [TestMethod]
@@ -50,7 +50,7 @@ public sealed class GitHubRepositoryTests
 
         Assert.AreEqual("{\"format\": 1}\n", text);
         Assert.AreEqual("abc", sha);
-        Assert.AreEqual("/repos/LordTyberias/armamentarium-box-data/git/blobs/abc", handler.Requests[1].Path);
+        Assert.AreEqual("/repos/Strecker-IT/armamentarium-box-data/git/blobs/abc", handler.Requests[1].Path);
     }
 
     [TestMethod]
@@ -76,7 +76,7 @@ public sealed class GitHubRepositoryTests
         Assert.AreEqual(12, number);
         var r = handler.Requests;
         Assert.AreEqual(4, r.Count);
-        Assert.AreEqual("/repos/LordTyberias/armamentarium-box-data/git/ref/heads/main", r[0].Path);
+        Assert.AreEqual("/repos/Strecker-IT/armamentarium-box-data/git/ref/heads/main", r[0].Path);
         StringAssert.Contains(r[1].Body, "\"refs/heads/scraper/60010199002\"");
         StringAssert.Contains(r[1].Body, "\"main-sha\"");
         Assert.AreEqual(HttpMethod.Put, r[2].Method);
@@ -119,7 +119,7 @@ public sealed class GitHubRepositoryTests
 
         var r = handler.Requests.Single();
         Assert.AreEqual(HttpMethod.Put, r.Method);
-        Assert.AreEqual("/repos/LordTyberias/armamentarium-box-data/pulls/12/merge", r.Path);
+        Assert.AreEqual("/repos/Strecker-IT/armamentarium-box-data/pulls/12/merge", r.Path);
     }
 
     [TestMethod]
@@ -131,7 +131,7 @@ public sealed class GitHubRepositoryTests
 
         var r = handler.Requests.Single();
         Assert.AreEqual(HttpMethod.Delete, r.Method);
-        Assert.AreEqual("/repos/LordTyberias/armamentarium-box-data/git/refs/heads/scraper/60010199002", r.Path);
+        Assert.AreEqual("/repos/Strecker-IT/armamentarium-box-data/git/refs/heads/scraper/60010199002", r.Path);
     }
 
     [TestMethod]
@@ -205,7 +205,7 @@ public sealed class GitHubRepositoryTests
 
         var last = handler.Requests[^1];
         Assert.AreEqual(HttpMethod.Delete, last.Method);
-        Assert.AreEqual("/repos/LordTyberias/armamentarium-box-data/git/refs/heads/scraper/60010199002", last.Path);
+        Assert.AreEqual("/repos/Strecker-IT/armamentarium-box-data/git/refs/heads/scraper/60010199002", last.Path);
     }
 
     [TestMethod]
@@ -256,7 +256,7 @@ public sealed class GitHubRepositoryTests
         var text = await new GitHubRepository(new HttpClient(handler), null).GetAliasesAsync(default);
 
         Assert.AreEqual("{\"format\": 1, \"aliases\": []}", text);
-        Assert.AreEqual("/repos/LordTyberias/armamentarium-box-data/contents/aliases.json?ref=main", handler.Requests[0].Path);
+        Assert.AreEqual("/repos/Strecker-IT/armamentarium-box-data/contents/aliases.json?ref=main", handler.Requests[0].Path);
     }
 
     [TestMethod]
