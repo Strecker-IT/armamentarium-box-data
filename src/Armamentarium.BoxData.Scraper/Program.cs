@@ -5,19 +5,21 @@ using System.Security.Authentication;
 namespace Armamentarium.BoxData.Scraper;
 
 /// <summary>
-/// Entry point of a run on the 1st and the 15th (ADR 0004 §6). systemd hands the token in through <c>LoadCredential</c>
-/// (<c>$CREDENTIALS_DIRECTORY/github-token</c>), the mail password (<c>mail-password</c>) and the state directory through
+/// Entry point of a run on the 1st and the 15th (ADR 0004 §6). systemd hands the tokens in through <c>LoadCredential</c>
+/// (<c>$CREDENTIALS_DIRECTORY/github-token</c>, writes here; <c>catalogue-token</c>, reads the bundled catalogues of the app
+/// repository, ADR 0004 Addendum ARMAM-787), the mail password (<c>mail-password</c>) and the state directory through
 /// <c>$STATE_DIRECTORY</c>. A run mails its notices at its end; a failed run is mailed by armamentarium-box-data-failure.service
 /// (ADR 0003 Addendum ARMAM-600).
 ///
-///   --dry-run        reads GitHub without a token, writes nothing, prints each proposal instead of opening it
+///   --dry-run        reads GitHub without the write token (the bundled catalogues with GITHUB_TOKEN, read-only, else
+///                    those readings stay without ids), writes nothing, prints each proposal instead of opening it
 ///   --code &lt;number&gt;  searches this one article number only, whatever the state says (with --dry-run for a check)
 ///   --auto-merge     opens each pull request ready and merges it at once (ADR 0004); with --dry-run it only says so
 ///   --host &lt;host&gt;    with --dry-run and --code: asks this one allowlisted shop and prints what it reads; --code
 ///                    then takes a comma-separated list (ADR 0003 addendum ARMAM-602)
 ///   --notify-failure mails that a run failed, from what systemd hands an OnFailure= unit; nothing else (ADR 0003 Addendum
 ///                    ARMAM-600)
-///   --id-report      reads the table and the catalogues without a token, asks no shop, writes nothing; prints per reading
+///   --id-report      reads the table and the catalogues (bundled ones with GITHUB_TOKEN, as --dry-run), asks no shop, writes nothing; prints per reading
 ///                    the gaps with their reason, the gaps a run would now fill and the names it would repair (ADR 0004
 ///                    Addendum ARMAM-598)
 /// </summary>
@@ -64,6 +66,9 @@ public static class Program
                 MaxResponseContentBufferSize = 64 * 1024 * 1024,
             };
             IRepository repository = new GitHubRepository(github, dryRun ? null : ReadCredential("github-token"), log: Log);
+            // The bundled catalogues lie in the private app repository: a token of its own, read-only there (never the
+            // write token above, ADR 0004 Addendum ARMAM-787); a local dry run reads GITHUB_TOKEN.
+            var catalogueToken = dryRun ? Environment.GetEnvironmentVariable("GITHUB_TOKEN") : ReadCredential("catalogue-token");
             if (dryRun)
             {
                 repository = new DryRunRepository(repository, Log);
@@ -72,7 +77,7 @@ public static class Program
             if (idReport)
             {
                 var (text, _) = await repository.GetTableAsync(stop.Token);
-                var index = await CatalogueIndex.LoadAsync(github, Log, stop.Token);
+                var index = await CatalogueIndex.LoadAsync(github, Log, stop.Token, token: catalogueToken);
                 foreach (var notice in AliasNotices(index.UseAliases(Aliases.Read(await repository.GetAliasesAsync(stop.Token)))))
                 {
                     Log(notice);
@@ -94,7 +99,7 @@ public static class Program
 
             // Every run checks the ids the table holds (ADR 0004 Addendum ARMAM-597); ids by name are set only while the
             // service merges by itself (ADR 0004), drafts stay without ids for the maintainer (Runner.IdsOf).
-            var catalogues = await CatalogueIndex.LoadAsync(github, Log, stop.Token);
+            var catalogues = await CatalogueIndex.LoadAsync(github, Log, stop.Token, token: catalogueToken);
             var notices = catalogues.Unavailable.Order(StringComparer.Ordinal)
                 .Select(reading => $"{reading}: a catalogue source is unreadable, no ids and no id check for this reading this run")
                 .ToList();

@@ -39,6 +39,11 @@ Environment=HOME=%S/armamentarium-box-data
 # reads the root-owned 0600 file and hands it over as $CREDENTIALS_DIRECTORY/github-token.
 # Never Environment=, which would show the value in systemctl show.
 LoadCredential=github-token:/etc/armamentarium-box-data/github-token
+# A second token, read-only on the private Armamentarium repository, for the bundled catalogues (ADR 0004 Addendum
+# ARMAM-787). Its own token: a fine-grained token's permissions hold for every repository it names, so adding the app
+# repository to the one above would give the service write access to the app. The file must exist before this unit is
+# installed, or the unit does not start.
+LoadCredential=catalogue-token:/etc/armamentarium-box-data/catalogue-token
 # The mail password of the Armamentarium web services, the same file and the same way in: one mailbox, one password,
 # one rotation (docs/server/betrieb.md in the main repository).
 LoadCredential=mail-password:/etc/armamentarium/mail-password

@@ -52,8 +52,10 @@ and ADR 0004:
 - Changes the table **only through a pull request**. With `--auto-merge` (ADR 0004) it merges each one itself, except the
   drafts of orphaned ids and of name repairs (ADR 0004 Addenda ARMAM-597, ARMAM-598), until the maintainer removes the switch; without it, it never merges and the merge is the hand check.
 - Write access through a fine-grained token scoped to this repository only (contents and pull requests), without expiry
-  (ADR 0004), stored outside every repository, never logged.
-- Catalogue ids from the catalogues of a compiled allowlist of repositories (ADR 0004 §3), downloaded every run, with or
+  (ADR 0004), stored outside every repository, never logged. A second token reads the bundled catalogues of the private
+  Armamentarium repository, `Contents: read` there and nothing else (ADR 0004 Addendum ARMAM-787).
+- Catalogue ids from the catalogues of a compiled allowlist of sources (ADR 0004 §3): the archives Armamentarium bundles,
+  through the contents API, and until ARMAM-788 the Spearhead repository (Addendum ARMAM-787), downloaded every run, with or
   without `--auto-merge`; every run first gives the gaps of its own boxes their ids and then checks the ids the table
   holds against them (ADR 0004 Addenda ARMAM-597, ARMAM-598). Own names of models that belong to a root entry of
   another name go to it through `aliases.json`, read from `main` every run, resolved by entry and catalogue name, never
