@@ -395,6 +395,23 @@ public sealed class CatalogueIndexTests
     }
 
     [TestMethod]
+    public async Task Load_WithoutATokenLeavesTheBundledReadingWithoutIds()
+    {
+        HttpRequestMessage? asked = null;
+        var http = new HttpClient(new Stub(request =>
+        {
+            asked = request;
+            return new(System.Net.HttpStatusCode.NotFound);
+        }));
+
+        var index = await CatalogueIndex.LoadAsync(
+            http, _ => { }, default, [new("40k", "o", "app", "master", Path: "Assets/Catalogues/11e.zip")], token: null);
+
+        Assert.IsNull(asked!.Headers.Authorization);
+        CollectionAssert.AreEquivalent(new[] { "40k" }, index.Unavailable.ToArray());
+    }
+
+    [TestMethod]
     public async Task Load_SendsNoTokenToCodeload()
     {
         using var zip = Zip(("r-main/Iron Brothers.cat", Xml));

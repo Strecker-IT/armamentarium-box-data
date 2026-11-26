@@ -301,8 +301,9 @@ public sealed partial class CatalogueIndex
     /// run (logged); the run goes on.
     /// </summary>
     /// <param name="token">
-    /// Read access to the private Armamentarium repository, sent only with a <see cref="CatalogueSource.Path"/> source to
-    /// <c>api.github.com</c>; without it those readings stay without ids for the run.
+    /// Read-only access to the private Armamentarium repository (its own credential, never the write token), sent only
+    /// with a <see cref="CatalogueSource.Path"/> source to <c>api.github.com</c>; without it those readings stay without
+    /// ids for the run.
     /// </param>
     public static async Task<CatalogueIndex> LoadAsync(
         HttpClient http, Action<string> log, CancellationToken cancellationToken, IReadOnlyList<CatalogueSource>? sources = null,

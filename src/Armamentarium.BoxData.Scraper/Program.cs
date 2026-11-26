@@ -64,8 +64,9 @@ public static class Program
                 MaxResponseContentBufferSize = 64 * 1024 * 1024,
             };
             IRepository repository = new GitHubRepository(github, dryRun ? null : ReadCredential("github-token"), log: Log);
-            // The bundled catalogues lie in the private app repository: the service's token, a local dry run's GITHUB_TOKEN.
-            var catalogueToken = dryRun ? Environment.GetEnvironmentVariable("GITHUB_TOKEN") : ReadCredential("github-token");
+            // The bundled catalogues lie in the private app repository: a token of its own, read-only there (never the
+            // write token above, ADR 0004 Addendum ARMAM-787); a local dry run reads GITHUB_TOKEN.
+            var catalogueToken = dryRun ? Environment.GetEnvironmentVariable("GITHUB_TOKEN") : ReadCredential("catalogue-token");
             if (dryRun)
             {
                 repository = new DryRunRepository(repository, Log);
