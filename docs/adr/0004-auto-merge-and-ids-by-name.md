@@ -79,6 +79,9 @@ on Devlan. A name found in more than one catalogue (`Superior`) gets none.
    | `tow` | `vflam/Warhammer-The-Old-World`; since Addendum ARMAM-787 the app bundle | latest release |
    | `hh` | `BSData/horus-heresy-3rd-edition` (JSON); since Addendum ARMAM-787 the app bundle | `main` |
 
+   Since Addendum ARMAM-787 the app bundle is read at `master` of `Strecker-IT/Armamentarium`, whatever the reference
+   column says for the old repository.
+
    Archives come from `codeload.github.com` (release tags from `api.github.com`; the bundled ones through the contents
    API, Addendum ARMAM-787), with the run's client: no redirect, at
    most 64 MB, each catalogue file at most 32 MB, read in memory and never unpacked. BattleScribe JSON is read with
