@@ -320,8 +320,9 @@ stopped by the timeout would lose it).
   `github-token`): a fine-grained token with `Contents: read` on `Strecker-IT/Armamentarium` and nothing else. Not the
   write token of §7: a fine-grained token's permissions hold for every repository it names, so adding the app repository
   to it would give the service write access to the code the app ships from. §7 stays as it is. A dry run reads
-  `GITHUB_TOKEN`. The token goes to `api.github.com` only, never to codeload. Without it those readings stay without ids
-  for the run, as any unreadable source.
+  `GITHUB_TOKEN`. The token goes to `api.github.com` only, never to codeload. Like `github-token` the credential file must
+  exist and be non-empty before the unit is deployed, otherwise the unit does not start; a token GitHub refuses (401, 404)
+  leaves those readings without ids for the run, as any unreadable source, and so does a dry run without `GITHUB_TOKEN`.
 - **Ids:** the bundle's archives carry the same ids as the BSData ones (measured in Armamentarium ARMAM-786: 10e, kt, tow
   none lost; 11e 0.5 %, hh3 0.1 %, aos4 1.5 %); the run's id check reports what moved. The table rows of the five
   readings point here.
