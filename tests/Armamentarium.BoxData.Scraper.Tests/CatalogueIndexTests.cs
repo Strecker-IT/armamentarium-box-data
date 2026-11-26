@@ -372,6 +372,45 @@ public sealed class CatalogueIndexTests
         CollectionAssert.AreEquivalent(new[] { "kt", "aos" }, index.Unavailable.ToArray());
     }
 
+    [TestMethod]
+    public async Task Load_ReadsABundledArchiveThroughTheContentsApiWithTheToken()
+    {
+        using var zip = Zip(("Iron Brothers.cat", Xml));
+        var bytes = zip.ToArray();
+        HttpRequestMessage? asked = null;
+        var http = new HttpClient(new Stub(request =>
+        {
+            asked = request;
+            return request.RequestUri!.AbsoluteUri == "https://api.github.com/repos/o/app/contents/Assets/Catalogues/11e.zip?ref=master"
+                ? new(System.Net.HttpStatusCode.OK) { Content = new ByteArrayContent(bytes) }
+                : new(System.Net.HttpStatusCode.NotFound);
+        }));
+
+        var index = await CatalogueIndex.LoadAsync(
+            http, _ => { }, default, [new("40k", "o", "app", "master", Path: "Assets/Catalogues/11e.zip")], token: "secret");
+
+        Assert.AreEqual(new RootEntry("cat-iron", "se-captain"), index.Find("40k", "Captain"));
+        Assert.AreEqual("Bearer secret", asked!.Headers.Authorization?.ToString());
+        Assert.IsTrue(asked.Headers.Accept.Any(value => value.MediaType == "application/vnd.github.raw"));
+    }
+
+    [TestMethod]
+    public async Task Load_SendsNoTokenToCodeload()
+    {
+        using var zip = Zip(("r-main/Iron Brothers.cat", Xml));
+        var bytes = zip.ToArray();
+        HttpRequestMessage? asked = null;
+        var http = new HttpClient(new Stub(request =>
+        {
+            asked = request;
+            return new(System.Net.HttpStatusCode.OK) { Content = new ByteArrayContent(bytes) };
+        }));
+
+        await CatalogueIndex.LoadAsync(http, _ => { }, default, [new("aos", "o", "good", "main")], token: "secret");
+
+        Assert.IsNull(asked!.Headers.Authorization);
+    }
+
     private static MemoryStream Zip(params (string Name, string Text)[] files)
     {
         var zip = new MemoryStream();

@@ -69,7 +69,7 @@ on Devlan. A name found in more than one catalogue (`Superior`) gets none.
 
    | Reading | Repository | Reference |
    |---|---|---|
-   | `40k` | `BSData/wh40k-10e` (XML), `BSData/wh40k-11e` (JSON) | `main` |
+   | `40k` | `BSData/wh40k-10e` (XML), `BSData/wh40k-11e` (JSON); since Addendum ARMAM-787 the app bundle | `main` |
    | `kt` | `BSData/wh40k-killteam` | latest release |
    | `aos` | `BSData/age-of-sigmar-4th`, `LordTyberias/armamentarium-spearhead-data` (now Strecker-IT, Addendum ARMAM-738) | latest release, `main` |
    | `tow` | `vflam/Warhammer-The-Old-World` | latest release |
@@ -299,3 +299,19 @@ stopped by the timeout would lose it).
   forwarding. The app switched in Armamentarium ARMAM-737; §3 follows it ("a change there is a change here"). The
   service's token names `Strecker-IT` as resource owner.
 - **No rule changes:** same repositories, same branch `main`, same ids. The table row of §3 keeps the old owner and points to this addendum.
+
+## Addendum ARMAM-787 — the catalogues Armamentarium ships with (2026-11-26)
+
+- **Measured** on 2026-11-26: every BSData repository answers 404; the organisation was emptied after a DMCA notice
+  (Armamentarium ADR 0134). Every reading but Spearhead's stood without ids.
+- **Sources (§3):** `40k`, `kt`, `aos`, `tow`, `hh` read the archives Armamentarium bundles into its app,
+  `Strecker-IT/Armamentarium`, `Armamentarium.Infrastructure/Assets/Catalogues/<edition>.zip` on `master` (`10e`, `11e`,
+  `kt`, `aos4`, `tow`, `hh3`; Armamentarium ADR 0134 §12). One archive per edition, BattleScribe XML, no root folder; read
+  like a codeload archive. Spearhead stays on `Strecker-IT/armamentarium-spearhead-data` until Armamentarium ARMAM-788
+  moves it into the bundle.
+- **Access:** the app repository is private. The file is fetched through the contents API (`api.github.com`,
+  `Accept: application/vnd.github.raw`; the JSON form leaves out content above 1 MB) with the service's token, which the
+  maintainer gives `Contents: read` on `Strecker-IT/Armamentarium`. A dry run reads `GITHUB_TOKEN`. The token goes to
+  `api.github.com` only, never to codeload. Without it those readings stay without ids for the run, as any unreadable source.
+- **Ids:** the bundle's archives carry the same ids as the BSData ones (measured in Armamentarium ARMAM-786: 10e, kt, tow
+  none lost; 11e 0.5 %, hh3 0.1 %, aos4 1.5 %); the run's id check reports what moved. The table row of §3 points here.

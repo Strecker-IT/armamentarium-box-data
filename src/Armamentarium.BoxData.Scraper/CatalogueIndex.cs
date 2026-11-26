@@ -20,7 +20,11 @@ public sealed record Candidate(RootEntry Entry, string CatalogueName, bool Home)
 /// when <see cref="Branch"/> is null. The rows follow the app's BsDataEditionSources; a change there is a change here. A
 /// <see cref="Preferred"/> source wins a name that it and another source of the reading name (ADR 0004 Addendum ARMAM-598).
 /// </summary>
-public sealed record CatalogueSource(string Reading, string Owner, string Repository, string? Branch, bool Preferred = false);
+/// <param name="Path">
+/// A file of the repository that is itself the archive (Armamentarium's bundled catalogues, ADR 0004 Addendum ARMAM-787), read
+/// through the contents API with the token; <c>null</c> for a repository read whole from codeload.
+/// </param>
+public sealed record CatalogueSource(string Reading, string Owner, string Repository, string? Branch, bool Preferred = false, string? Path = null);
 
 /// <summary>
 /// What the catalogues of a run say about ids the table already holds (ADR 0004 Addendum ARMAM-597): still a root entry
@@ -40,17 +44,24 @@ public enum IdState
 /// </summary>
 public sealed partial class CatalogueIndex
 {
-    /// <summary>The compiled allowlist of catalogue repositories (ADR 0004). Nothing else is downloaded.</summary>
+    /// <summary>
+    /// The compiled allowlist of catalogue sources (ADR 0004). Nothing else is downloaded. Since the BSData takedown the
+    /// archives Armamentarium ships with (ADR 0004 Addendum ARMAM-787); Spearhead stays on its own repository until
+    /// ARMAM-788 moves it into the bundle.
+    /// </summary>
     public static readonly CatalogueSource[] Sources =
     [
-        new("40k", "BSData", "wh40k-10e", "main"),
-        new("40k", "BSData", "wh40k-11e", "main"),
-        new("kt", "BSData", "wh40k-killteam", null),
-        new("aos", "BSData", "age-of-sigmar-4th", null),
+        Bundled("40k", "10e"),
+        Bundled("40k", "11e"),
+        Bundled("kt", "kt"),
+        Bundled("aos", "aos4"),
         new("aos", "Strecker-IT", "armamentarium-spearhead-data", "main", Preferred: true),
-        new("tow", "BSData", "warhammer-the-old-world", null),
-        new("hh", "BSData", "horus-heresy-3rd-edition", "main"),
+        Bundled("tow", "tow"),
+        Bundled("hh", "hh3"),
     ];
+
+    private static CatalogueSource Bundled(string reading, string edition) =>
+        new(reading, "Strecker-IT", "Armamentarium", "master", Path: $"Armamentarium.Infrastructure/Assets/Catalogues/{edition}.zip");
 
     /// <summary>The largest catalogue file read; the largest measured (11th edition Space Marines JSON) is 6.8 MB.</summary>
     public const int MaxEntryBytes = 32 * 1024 * 1024;
@@ -289,23 +300,42 @@ public sealed partial class CatalogueIndex
     /// Downloads every source of the allowlist and reads it. A source that fails leaves its reading without ids for this
     /// run (logged); the run goes on.
     /// </summary>
+    /// <param name="token">
+    /// Read access to the private Armamentarium repository, sent only with a <see cref="CatalogueSource.Path"/> source to
+    /// <c>api.github.com</c>; without it those readings stay without ids for the run.
+    /// </param>
     public static async Task<CatalogueIndex> LoadAsync(
-        HttpClient http, Action<string> log, CancellationToken cancellationToken, IReadOnlyList<CatalogueSource>? sources = null)
+        HttpClient http, Action<string> log, CancellationToken cancellationToken, IReadOnlyList<CatalogueSource>? sources = null,
+        string? token = null)
     {
         var index = new CatalogueIndex();
         foreach (var source in sources ?? Sources)
         {
             try
             {
-                var reference = source.Branch is { } branch ? $"heads/{branch}" : $"tags/{await LatestTagAsync(http, source, cancellationToken)}";
+                var reference = source.Path is not null ? source.Branch ?? "main"
+                    : source.Branch is { } branch ? $"heads/{branch}"
+                    : $"tags/{await LatestTagAsync(http, source, cancellationToken)}";
                 using var request = new HttpRequestMessage(
-                    HttpMethod.Get, $"https://codeload.github.com/{source.Owner}/{source.Repository}/zip/refs/{reference}");
+                    HttpMethod.Get,
+                    source.Path is { } path
+                        ? $"https://api.github.com/repos/{source.Owner}/{source.Repository}/contents/{path}?ref={reference}"
+                        : $"https://codeload.github.com/{source.Owner}/{source.Repository}/zip/refs/{reference}");
                 request.Headers.UserAgent.ParseAdd("ArmamentariumBoxData");
+                if (source.Path is not null)
+                {
+                    // The file's bytes, not its JSON description (which leaves out content above 1 MB).
+                    request.Headers.Accept.ParseAdd("application/vnd.github.raw");
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    }
+                }
                 using var response = await http.SendAsync(request, cancellationToken);
                 response.EnsureSuccessStatusCode();
                 using var zip = new MemoryStream(await response.Content.ReadAsByteArrayAsync(cancellationToken));
                 index.AddArchive(source.Reading, zip, MaxEntryBytes, log, source.Preferred);
-                log($"{source.Reading}: read {source.Owner}/{source.Repository} at {reference}");
+                log($"{source.Reading}: read {source.Owner}/{source.Repository}{(source.Path is null ? "" : "/" + source.Path)} at {reference}");
             }
             catch (Exception ex) when (ex is HttpRequestException or InvalidDataException or JsonException or KeyNotFoundException
                                            || (ex is TaskCanceledException && !cancellationToken.IsCancellationRequested))

@@ -64,6 +64,8 @@ public static class Program
                 MaxResponseContentBufferSize = 64 * 1024 * 1024,
             };
             IRepository repository = new GitHubRepository(github, dryRun ? null : ReadCredential("github-token"), log: Log);
+            // The bundled catalogues lie in the private app repository: the service's token, a local dry run's GITHUB_TOKEN.
+            var catalogueToken = dryRun ? Environment.GetEnvironmentVariable("GITHUB_TOKEN") : ReadCredential("github-token");
             if (dryRun)
             {
                 repository = new DryRunRepository(repository, Log);
@@ -72,7 +74,7 @@ public static class Program
             if (idReport)
             {
                 var (text, _) = await repository.GetTableAsync(stop.Token);
-                var index = await CatalogueIndex.LoadAsync(github, Log, stop.Token);
+                var index = await CatalogueIndex.LoadAsync(github, Log, stop.Token, token: catalogueToken);
                 foreach (var notice in AliasNotices(index.UseAliases(Aliases.Read(await repository.GetAliasesAsync(stop.Token)))))
                 {
                     Log(notice);
@@ -94,7 +96,7 @@ public static class Program
 
             // Every run checks the ids the table holds (ADR 0004 Addendum ARMAM-597); ids by name are set only while the
             // service merges by itself (ADR 0004), drafts stay without ids for the maintainer (Runner.IdsOf).
-            var catalogues = await CatalogueIndex.LoadAsync(github, Log, stop.Token);
+            var catalogues = await CatalogueIndex.LoadAsync(github, Log, stop.Token, token: catalogueToken);
             var notices = catalogues.Unavailable.Order(StringComparer.Ordinal)
                 .Select(reading => $"{reading}: a catalogue source is unreadable, no ids and no id check for this reading this run")
                 .ToList();
