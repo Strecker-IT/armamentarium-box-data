@@ -41,6 +41,10 @@ gap there; it leaves its box in `scraper/fix-names` when the line of that entry 
 **Changed by Addendum ARMAM-738:** the own repositories moved to the organisation `Strecker-IT`; §3 `aos` reads
 `Strecker-IT/armamentarium-spearhead-data`, and the service opens its pull requests in `Strecker-IT/armamentarium-box-data`.
 
+**Changed by Addendum ARMAM-787:** §3 the readings `40k`, `kt`, `aos`, `tow`, `hh` read the archives Armamentarium bundles
+(`Strecker-IT/Armamentarium`, contents API with the service's token); BSData answers 404. Spearhead stays on its repository
+until ARMAM-788.
+
 ## Context
 
 The service runs on the server since 2026-10-17 (ARMAM-593). Its drafts wait for the maintainer to add catalogue ids,
