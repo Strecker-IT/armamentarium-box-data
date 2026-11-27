@@ -31885,6 +31885,28 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Orc & Goblin Tribes: Orc Bosses",
+      "productCodes": [
+        "99122709001"
+      ],
+      "sources": [
+        "https://elementgames.co.uk/wargames-and-miniatures-by-manufacturer/games-workshop/warhammer-the-old-world/orc-and-goblin-tribes-orc-bosses",
+        "https://radaddel.de/products/orc-goblin-orc-bosses"
+      ],
+      "readings": [
+        {
+          "reading": "tow",
+          "entries": [
+            {
+              "role": "team",
+              "name": "characters",
+              "count": 2
+            }
+          ]
+        }
+      ]
     }
   ]
 }
