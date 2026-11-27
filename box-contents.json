@@ -31706,6 +31706,30 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Warriors of Chaos - Chaos Lord on Daemonic Mount",
+      "productCodes": [
+        "99112701003"
+      ],
+      "sources": [
+        "https://abyssgamestore.ca/products/warriors-of-chaos-chaos-lord-on-daemonic-mount",
+        "https://shop.afk.games/products/chaos-lord-on-daemonic-mount"
+      ],
+      "readings": [
+        {
+          "reading": "tow",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "c908-5f26-5bdf-2a48",
+              "entryId": "617-b6cf-592e-8832",
+              "name": "Chaos Lord",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
