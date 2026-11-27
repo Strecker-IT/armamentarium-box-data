@@ -31857,6 +31857,34 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Orruk Warclans: Tuskboss On Maw-Grunta",
+      "productCodes": [
+        "99120209111"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/tuskboss-on-maw-grunta",
+        "https://abyssgamestore.ca/products/orruk-warclans-tuskboss-on-maw-grunta-89-81",
+        "https://shop.afk.games/products/orruk-warclans-tuskboss-on-maw-grunta",
+        "https://obsidiangames.ca/products/orruk-warclans-tuskboss-on-maw-grunta",
+        "https://mrmuffinstrains.com/products/gw-89-81",
+        "https://elementgames.co.uk/new-warhammer-age-of-sigmar/orruk-warclans-tuskboss-on-maw-grunta"
+      ],
+      "readings": [
+        {
+          "reading": "aos",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "832c-fd6-a535-ffae",
+              "entryId": "3520-fc6a-d4fc-1c1f",
+              "name": "Tuskboss on Maw-Grunta",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
