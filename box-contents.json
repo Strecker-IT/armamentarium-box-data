@@ -31654,6 +31654,34 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Orks: Painboss",
+      "productCodes": [
+        "99070103006"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/orks-painboss",
+        "https://www.retrofixgames.com/products/warhammer-40k-orks-painboss",
+        "https://shop.afk.games/products/ork-painboss",
+        "https://obsidiangames.ca/products/orks-painboss",
+        "https://mrmuffinstrains.com/products/gw-50-49",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/orks/orks-painboss"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "a55f-b7b3-6c65-a05f",
+              "entryId": "a74a-107a-e2ac-7e4c",
+              "name": "Painboss",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
