@@ -3939,8 +3939,6 @@
           "entries": [
             {
               "role": "team",
-              "catalogueId": "3591-2aa0-250c-ddeb",
-              "entryId": "9637-cbfa-7041-5185",
               "name": "Mandrakes",
               "count": 10
             }
@@ -5590,8 +5588,6 @@
           "entries": [
             {
               "role": "team",
-              "catalogueId": "b3f9-6c96-b99a-1e71",
-              "entryId": "4a5c-a6be-cecb-a47a",
               "name": "Auric Flamekeeper",
               "count": 1
             }
@@ -18244,8 +18240,6 @@
           "entries": [
             {
               "role": "team",
-              "catalogueId": "b3f9-6c96-b99a-1e71",
-              "entryId": "aa8-9db3-b817-6324",
               "name": "Auric Runefather",
               "count": 1
             }
@@ -29347,8 +29341,6 @@
           "entries": [
             {
               "role": "team",
-              "catalogueId": "b3f9-6c96-b99a-1e71",
-              "entryId": "2a37-8d73-b1ba-576d",
               "name": "Fyreslayer Doomseeker",
               "count": 1
             }
@@ -29371,8 +29363,6 @@
           "entries": [
             {
               "role": "team",
-              "catalogueId": "b3f9-6c96-b99a-1e71",
-              "entryId": "145f-e68f-3a4e-c25a",
               "name": "Grimhold Exile",
               "count": 1
             }
