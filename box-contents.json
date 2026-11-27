@@ -31944,6 +31944,28 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Warhammer 40K Imperial Knights Knight Questoris",
+      "productCodes": [
+        "99120108082"
+      ],
+      "sources": [
+        "https://www.retrofixgames.com/products/warhammer-40k-imperial-knights-knight-questoris",
+        "https://obsidiangames.ca/products/imperial-knights-knight-questoris"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "name": "Knight Questoris",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
