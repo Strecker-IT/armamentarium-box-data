@@ -17,7 +17,8 @@ public sealed record Candidate(RootEntry Entry, string CatalogueName, bool Home)
 
 /// <summary>
 /// A catalogue repository the service reads ids from (ADR 0004): owner, repository and branch, or the latest release
-/// when <see cref="Branch"/> is null. The rows follow the app's BsDataEditionSources; a change there is a change here. A
+/// when <see cref="Branch"/> is null. The rows follow the archives the app bundles (Armamentarium ADR 0134 §9); a change
+/// there is a change here. A
 /// <see cref="Preferred"/> source wins a name that it and another source of the reading name (ADR 0004 Addendum ARMAM-598).
 /// </summary>
 /// <param name="Path">
@@ -46,8 +47,7 @@ public sealed partial class CatalogueIndex
 {
     /// <summary>
     /// The compiled allowlist of catalogue sources (ADR 0004). Nothing else is downloaded. Since the BSData takedown the
-    /// archives Armamentarium ships with (ADR 0004 Addendum ARMAM-787); Spearhead stays on its own repository until
-    /// ARMAM-788 moves it into the bundle.
+    /// archives Armamentarium ships with (ADR 0004 Addendum ARMAM-787), Spearhead's too since ARMAM-788, still preferred.
     /// </summary>
     public static readonly CatalogueSource[] Sources =
     [
@@ -55,13 +55,13 @@ public sealed partial class CatalogueIndex
         Bundled("40k", "11e"),
         Bundled("kt", "kt"),
         Bundled("aos", "aos4"),
-        new("aos", "Strecker-IT", "armamentarium-spearhead-data", "main", Preferred: true),
+        Bundled("aos", "sph", preferred: true),
         Bundled("tow", "tow"),
         Bundled("hh", "hh3"),
     ];
 
-    private static CatalogueSource Bundled(string reading, string edition) =>
-        new(reading, "Strecker-IT", "Armamentarium", "master", Path: $"Armamentarium.Infrastructure/Assets/Catalogues/{edition}.zip");
+    private static CatalogueSource Bundled(string reading, string edition, bool preferred = false) =>
+        new(reading, "Strecker-IT", "Armamentarium", "master", preferred, $"Armamentarium.Infrastructure/Assets/Catalogues/{edition}.zip");
 
     /// <summary>The largest catalogue file read; the largest measured (11th edition Space Marines JSON) is 6.8 MB.</summary>
     public const int MaxEntryBytes = 32 * 1024 * 1024;

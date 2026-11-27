@@ -154,6 +154,19 @@ public sealed class CatalogueIndexTests
     }
 
     [TestMethod]
+    public void Sources_ReadSpearheadFromTheBundleAndPreferIt()
+    {
+        // ARMAM-788: Spearhead's archive ships with the app like every other edition and still wins a shared name.
+        var spearhead = CatalogueIndex.Sources.Single(source => source.Path?.EndsWith("/sph.zip", StringComparison.Ordinal) == true);
+
+        Assert.AreEqual("aos", spearhead.Reading);
+        Assert.IsTrue(spearhead.Preferred);
+        Assert.AreEqual("Armamentarium", spearhead.Repository);
+        Assert.AreEqual(1, CatalogueIndex.Sources.Count(source => source.Preferred));
+        Assert.IsTrue(CatalogueIndex.Sources.All(source => source.Path is not null), "Every source is an archive of the app bundle.");
+    }
+
+    [TestMethod]
     public void NameWithoutTheUnitWord_FindsTheSquad()
     {
         var index = Index(("Army.cat", Army), ("Army Library.cat", ArmyLibrary));
