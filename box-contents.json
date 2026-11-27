@@ -31907,6 +31907,43 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Warhammer Horus Heresy Legiones Astartes Siege Assault Battle Group",
+      "productCodes": [
+        "99123001052"
+      ],
+      "sources": [
+        "https://www.retrofixgames.com/products/warhammer-horus-heresy-legiones-astartes-siege-assault-battle-group",
+        "https://shop.afk.games/products/l-astartes-siege-assault-battle-group"
+      ],
+      "readings": [
+        {
+          "reading": "hh",
+          "entries": [
+            {
+              "role": "team",
+              "name": "Leviathan Siege Dreadnought",
+              "count": 1
+            },
+            {
+              "role": "team",
+              "name": "MKIII Breacher Squad",
+              "count": 10
+            },
+            {
+              "role": "team",
+              "name": "Cataphractii Terminators with volkite chargers and power mauls",
+              "count": 6
+            },
+            {
+              "role": "team",
+              "name": "Cataphractii Terminators with combi-bolters and power fists",
+              "count": 6
+            }
+          ]
+        }
+      ]
     }
   ]
 }
