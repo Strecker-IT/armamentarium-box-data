@@ -31629,6 +31629,31 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Space Marines Primaris Librarian",
+      "productCodes": [
+        "99070101063"
+      ],
+      "sources": [
+        "https://shop.afk.games/products/space-marines-primaris-librarian",
+        "https://obsidiangames.ca/products/primaris-librarian",
+        "https://mrmuffinstrains.com/products/gw-48-63"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "78eb-9334-f5c0-6095",
+              "name": "Primaris Librarian",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
