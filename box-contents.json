@@ -31757,6 +31757,30 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Space Marines: Lieutenant in Reiver Armour",
+      "productCodes": [
+        "99120101467"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/space-marines-primaris-lieutenant-in-reiver-armour",
+        "https://shop.afk.games/products/primaris-lieutenant-in-reiver-armour"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "6dfd-beb0-5b01-b21e",
+              "name": "Primaris Lieutenant in Reiver Armour",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
