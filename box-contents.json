@@ -31535,6 +31535,49 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Helsmiths Of Hashut Army Set",
+      "productCodes": [
+        "60010211001"
+      ],
+      "sources": [
+        "https://www.retrofixgames.com/products/helsmiths-of-hashut-army-set",
+        "https://shop.afk.games/products/helsmiths-of-hashut-army-set"
+      ],
+      "readings": [
+        {
+          "reading": "aos",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "sph-catalogue::helsmiths-of-hashut",
+              "entryId": "sph::helforge-host::01-war-despot",
+              "name": "War Despot",
+              "count": 1
+            },
+            {
+              "role": "team",
+              "catalogueId": "sph-catalogue::helsmiths-of-hashut",
+              "entryId": "sph::helforge-host::02-dominator-engine-with-immolation-cannons",
+              "name": "Dominator Engine with Immolation Cannons",
+              "count": 1
+            },
+            {
+              "role": "team",
+              "catalogueId": "sph-catalogue::helsmiths-of-hashut",
+              "entryId": "sph::helforge-host::03-tormentor-bombard",
+              "name": "Tormentor Bombard",
+              "count": 1
+            },
+            {
+              "role": "team",
+              "name": "Infernal Cohort",
+              "count": 11
+            }
+          ]
+        }
+      ]
     }
   ]
 }
