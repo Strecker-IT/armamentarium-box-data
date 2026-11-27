@@ -55,7 +55,7 @@ and ADR 0004:
   (ADR 0004), stored outside every repository, never logged. A second token reads the bundled catalogues of the private
   Armamentarium repository, `Contents: read` there and nothing else (ADR 0004 Addendum ARMAM-787).
 - Catalogue ids from the catalogues of a compiled allowlist of sources (ADR 0004 §3): the archives Armamentarium bundles,
-  through the contents API, and until ARMAM-788 the Spearhead repository (Addendum ARMAM-787), downloaded every run, with or
+  through the contents API, Spearhead's too since ARMAM-788 (Addenda ARMAM-787, ARMAM-788), downloaded every run, with or
   without `--auto-merge`; every run first gives the gaps of its own boxes their ids and then checks the ids the table
   holds against them (ADR 0004 Addenda ARMAM-597, ARMAM-598). Own names of models that belong to a root entry of
   another name go to it through `aliases.json`, read from `main` every run, resolved by entry and catalogue name, never

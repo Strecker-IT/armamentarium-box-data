@@ -45,6 +45,9 @@ gap there; it leaves its box in `scraper/fix-names` when the line of that entry 
 (`Strecker-IT/Armamentarium`, contents API with a second, read-only token); BSData answers 404. Spearhead stays on its repository
 until ARMAM-788.
 
+**Changed by Addendum ARMAM-788:** §3 `aos` reads Spearhead from the app bundle too (`sph.zip`), still preferred; it no longer
+reads its own repository, which goes away with Armamentarium ARMAM-791.
+
 ## Context
 
 The service runs on the server since 2026-10-17 (ARMAM-593). Its drafts wait for the maintainer to add catalogue ids,
@@ -75,7 +78,7 @@ on Devlan. A name found in more than one catalogue (`Superior`) gets none.
    |---|---|---|
    | `40k` | `BSData/wh40k-10e` (XML), `BSData/wh40k-11e` (JSON); since Addendum ARMAM-787 the app bundle | `main` |
    | `kt` | `BSData/wh40k-killteam`; since Addendum ARMAM-787 the app bundle | latest release |
-   | `aos` | `BSData/age-of-sigmar-4th` (since Addendum ARMAM-787 the app bundle), `LordTyberias/armamentarium-spearhead-data` (now Strecker-IT, Addendum ARMAM-738) | latest release, `main` |
+   | `aos` | `BSData/age-of-sigmar-4th` (since Addendum ARMAM-787 the app bundle), `LordTyberias/armamentarium-spearhead-data` (now Strecker-IT, Addendum ARMAM-738; since Addendum ARMAM-788 the app bundle) | latest release, `main` |
    | `tow` | `vflam/Warhammer-The-Old-World`; since Addendum ARMAM-787 the app bundle | latest release |
    | `hh` | `BSData/horus-heresy-3rd-edition` (JSON); since Addendum ARMAM-787 the app bundle | `main` |
 
@@ -329,3 +332,13 @@ stopped by the timeout would lose it).
 - **Ids:** the bundle's archives carry the same ids as the BSData ones (measured in Armamentarium ARMAM-786: 10e, kt, tow
   none lost; 11e 0.5 %, hh3 0.1 %, aos4 1.5 %); the run's id check reports what moved. The table rows of the five
   readings point here.
+
+## Addendum ARMAM-788 — Spearhead from the app bundle (2026-11-27)
+
+- **Source (§3):** Armamentarium ARMAM-788 moved its own Spearhead data into the app repository and ships it as
+  `Armamentarium.Infrastructure/Assets/Catalogues/sph.zip` like every other edition (Armamentarium ADR 0134 Addendum
+  ARMAM-788). The `aos` reading reads it through the contents API with the `catalogue-token`, as the other bundled
+  archives (Addendum ARMAM-787). `Strecker-IT/armamentarium-spearhead-data` goes away with Armamentarium ARMAM-791.
+- **Preferred stays:** a name Age of Sigmar 4th and Spearhead share still takes Spearhead's ids (Addendum ARMAM-598).
+- **Ids unchanged:** only the rule texts were reworded; root entry names and ids are those of the former repository at
+  `24062696`. Every source of §3 is now an archive of the app bundle.
