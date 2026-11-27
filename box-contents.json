@@ -31730,6 +31730,33 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Warhammer 40k: Space Marines - Primaris Redemptor Dreadnought",
+      "productCodes": [
+        "99120101310"
+      ],
+      "sources": [
+        "https://www.wellplayed.ch/products/warhammer-40k-space-marines-primaris-redemptor-dreadnought",
+        "https://www.irresistibleforce.com.au/products/space-marines-primaris-redemptor-dreadnought",
+        "https://shop.afk.games/products/primaris-redemptor-dreadnought",
+        "https://obsidiangames.ca/products/space-marines-redemptor-dreadnought",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/blood-angels/space-marines-primaris-redemptor-dreadnought"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "1d94-b3c8-9205-827e",
+              "name": "Primaris Redemptor Dreadnought",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
