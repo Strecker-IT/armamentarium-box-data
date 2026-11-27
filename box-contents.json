@@ -31781,6 +31781,31 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Space Marines: Chaplain",
+      "productCodes": [
+        "99120101473"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/space-marines-primaris-chaplain",
+        "https://shop.afk.games/products/space-marines-primaris-chaplain",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/blood-angels/space-marines-primaris-chaplain"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "ceb5-55c7-2d49-d952",
+              "name": "Primaris Chaplain",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
