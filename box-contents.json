@@ -31966,6 +31966,30 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Idoneth Deepkin: Akhelian Leviadon",
+      "productCodes": [
+        "99120219009"
+      ],
+      "sources": [
+        "https://shop.afk.games/products/idoneth-deepkin-akhelian-leviadon",
+        "https://obsidiangames.ca/products/idoneth-deepkin-akhelian-leviadon"
+      ],
+      "readings": [
+        {
+          "reading": "aos",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "40a4-1c1c-8a00-bb65",
+              "entryId": "8e30-fc7b-3b12-a269",
+              "name": "Akhelian Leviadon",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
