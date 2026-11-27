@@ -31806,6 +31806,30 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Space Marines: Librarian",
+      "productCodes": [
+        "99120101474"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/space-marines-primaris-librarian",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/blood-angels/space-marine-primaris-librarian"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "78eb-9334-f5c0-6095",
+              "name": "Primaris Librarian",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
