@@ -31682,6 +31682,30 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Soulblight Gravelords - Wight King ( 91-31 )",
+      "productCodes": [
+        "99070207020"
+      ],
+      "sources": [
+        "https://abyssgamestore.ca/products/deathrattle-wight-king-91-31",
+        "https://mrmuffinstrains.com/products/gw-91-31"
+      ],
+      "readings": [
+        {
+          "reading": "aos",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "sph-catalogue::soulblight-gravelords",
+              "entryId": "sph::deathrattle-tomb-host::01-wight-king",
+              "name": "Wight King",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
