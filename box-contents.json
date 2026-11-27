@@ -31830,6 +31830,33 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Necrons: Ophydian Destroyers",
+      "productCodes": [
+        "99120110053"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/necrons-ophydian-destroyers",
+        "https://www.retrofixgames.com/products/warhammer-40k-necrons-ophydian-destroyers",
+        "https://shop.afk.games/products/necrons-ophydian-destroyers",
+        "https://obsidiangames.ca/products/necrons-ophydian-destroyers",
+        "https://mrmuffinstrains.com/products/gw-49-32"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "b654-a18a-ea1-3bf2",
+              "entryId": "c6db-9736-4d53-3ef6",
+              "name": "Ophydian Destroyers",
+              "count": 3
+            }
+          ]
+        }
+      ]
     }
   ]
 }
