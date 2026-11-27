@@ -45,8 +45,8 @@ gap there; it leaves its box in `scraper/fix-names` when the line of that entry 
 (`Strecker-IT/Armamentarium`, contents API with a second, read-only token); BSData answers 404. Spearhead stays on its repository
 until ARMAM-788.
 
-**Changed by Addendum ARMAM-788:** §3 `aos` reads Spearhead from the app bundle too (`sph.zip`), still preferred; its own
-repository is gone.
+**Changed by Addendum ARMAM-788:** §3 `aos` reads Spearhead from the app bundle too (`sph.zip`), still preferred; it no longer
+reads its own repository, which goes away with Armamentarium ARMAM-791.
 
 ## Context
 

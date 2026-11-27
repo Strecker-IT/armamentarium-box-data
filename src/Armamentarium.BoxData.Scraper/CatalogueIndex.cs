@@ -17,9 +17,9 @@ public sealed record Candidate(RootEntry Entry, string CatalogueName, bool Home)
 
 /// <summary>
 /// A catalogue repository the service reads ids from (ADR 0004): owner, repository and branch, or the latest release
-/// when <see cref="Branch"/> is null. The rows follow the archives the app bundles (Armamentarium ADR 0134 §9); a change
-/// there is a change here. A
-/// <see cref="Preferred"/> source wins a name that it and another source of the reading name (ADR 0004 Addendum ARMAM-598).
+/// when <see cref="Branch"/> is null. The rows follow the archives the app bundles (Armamentarium ADR 0134 §12); a
+/// change there is a change here. A <see cref="Preferred"/> source wins a name that it and another source of the reading
+/// name (ADR 0004 Addendum ARMAM-598).
 /// </summary>
 /// <param name="Path">
 /// A file of the repository that is itself the archive (Armamentarium's bundled catalogues, ADR 0004 Addendum ARMAM-787), read
