@@ -1297,6 +1297,8 @@
             },
             {
               "role": "npo",
+              "catalogueId": "ffd6-f3ca-defa-f836",
+              "entryId": "d01b-4991-49ca-de90",
               "name": "Termagants",
               "count": 10
             },
@@ -3509,6 +3511,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "ffd6-f3ca-defa-f836",
+              "entryId": "f7a2-e43c-1d11-dcb1",
               "name": "Raveners",
               "count": 5
             }
@@ -28148,6 +28152,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "9396-cc24-458d-d358",
+              "entryId": "6e09-fdbd-dc83-ed56",
               "name": "Screamers of Tzeentch",
               "count": 3
             }
@@ -28509,6 +28515,8 @@
           "entries": [
             {
               "role": "team",
+              "catalogueId": "9396-cc24-458d-d358",
+              "entryId": "b8de-a6ca-73b3-72df",
               "name": "Flamers of Tzeentch",
               "count": 3
             }
