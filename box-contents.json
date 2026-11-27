@@ -31604,6 +31604,31 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Space Marines Primaris Captain",
+      "productCodes": [
+        "99070101061"
+      ],
+      "sources": [
+        "https://shop.afk.games/products/space-marines-primaris-captain",
+        "https://mrmuffinstrains.com/products/gw-48-61",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/blood-angels/space-marine-primaris-captain"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "6c10-5b51-5bc0-8d2c",
+              "name": "Primaris Captain",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
