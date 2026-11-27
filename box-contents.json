@@ -31578,6 +31578,32 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Space Marines: Primaris Apothecary",
+      "productCodes": [
+        "99070101060"
+      ],
+      "sources": [
+        "https://www.irresistibleforce.com.au/products/space-marines-primaris-apothecary",
+        "https://shop.afk.games/products/space-marines-primaris-apothecary",
+        "https://mrmuffinstrains.com/products/gw-48-60",
+        "https://elementgames.co.uk/games-workshop/warhammer-40k/blood-angels/space-marines-primaris-apothecary"
+      ],
+      "readings": [
+        {
+          "reading": "40k",
+          "entries": [
+            {
+              "role": "team",
+              "catalogueId": "e0af-67df-9d63-8fb7",
+              "entryId": "8a9d-11f-fad-bd0f",
+              "name": "Primaris Apothecary",
+              "count": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }
